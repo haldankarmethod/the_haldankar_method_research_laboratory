@@ -1,0 +1,123 @@
+/* ==========================================================================
+   DECISION CONTEXT MODELS (DCM) — RESEARCH HUB STYLESHEET
+   Authoritative Reference: redesign roadmap.docx (Parts 11, 14, 23, 24)
+   ========================================================================== */
+
+@import url('/static/css/research-tokens.css');
+
+/* Pathway Flowchart Nodes */
+.pathway-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin: var(--space-8) 0;
+}
+
+@media (max-width: 860px) {
+    .pathway-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pathway-node {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pathway-node--alert {
+    border-color: rgba(153, 27, 27, 0.5);
+    background: var(--warning-bg);
+}
+
+.pathway-node__step {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+}
+
+.pathway-node--alert .pathway-node__step {
+    color: #f87171;
+}
+
+.pathway-node__title {
+    font-family: var(--font-serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.pathway-node__desc {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Two-Layer Pipeline Architecture Box */
+.two-layer-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    margin: var(--space-8) 0;
+}
+
+@media (max-width: 768px) {
+    .two-layer-box {
+        grid-template-columns: 1fr;
+    }
+}
+
+.layer-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+}
+
+.layer-card--upstream {
+    border-left: 3px solid var(--accent-gold);
+}
+
+.layer-card--downstream {
+    border-left: 3px solid #3b82f6;
+}
+
+.layer-card__tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.35rem;
+}
+
+.layer-card--upstream .layer-card__tag {
+    color: var(--accent-gold);
+}
+
+.layer-card--downstream .layer-card__tag {
+    color: #60a5fa;
+}
+
+.layer-card__title {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.layer-card__desc {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0;
+}

@@ -1,0 +1,401 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}The Haldankar Method — Financial Decision Integrity &amp; Contextual AI Research Laboratory{% endblock %}
+
+{% block content %}
+<!-- ==========================================================================
+   SECTION 01 — LABORATORY IDENTITY (HERO)
+   ========================================================================== -->
+<section id="hero" class="section" style="padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(3.5rem, 6vw, 5.5rem);">
+    <div class="container">
+        <div style="max-width: 900px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: var(--space-4);">
+                <span class="status-pill status-pill--finding">INDEPENDENT RESEARCH LABORATORY</span>
+                <span class="status-pill">ORCID: 0009-0000-9372-059X</span>
+                <span class="status-pill">STATUS: ACTIVE INVESTIGATIONS 2026</span>
+            </div>
+
+            <h1 style="font-size: clamp(2.5rem, 5.5vw, 3.75rem); line-height: 1.15; margin-bottom: var(--space-4); letter-spacing: -0.025em;">
+                THE HALDANKAR METHOD
+            </h1>
+
+            <p class="lead-paragraph" style="color: var(--text-primary); font-size: clamp(1.125rem, 2.2vw, 1.35rem); max-width: 820px; line-height: 1.55; margin-bottom: var(--space-4);">
+                Independent Research Laboratory · Cognitive Friction, Information Architecture, and Finance + AI Decision Integrity.
+            </p>
+
+            <p style="font-size: 1.0625rem; line-height: 1.75; color: var(--text-secondary); max-width: 780px; margin-bottom: var(--space-8);">
+                This laboratory investigates the structural gap between high-frequency financial data and the human or machine cognitive systems that interpret it. We deconstruct how perceptual distortion, biological working memory bottlenecks, and unverified AI default assumptions create compounding institutional margin leakage.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: var(--space-8);">
+                <a href="/research/" class="btn btn-primary" style="padding: 0.85rem 1.75rem; font-size: 0.875rem;">
+                    <span>Explore Research Hub</span>
+                    <span style="font-family: var(--font-mono); margin-left: 0.35rem;">→</span>
+                </a>
+                <a href="/research/actual-profit/" class="btn btn-secondary" style="padding: 0.85rem 1.5rem; font-size: 0.875rem;">
+                    <span>Read Actual Profit Monograph</span>
+                    <span style="font-family: var(--font-mono); margin-left: 0.35rem;">→</span>
+                </a>
+                <a href="/publications/books/actual-profit/actual-profit-final.pdf" download="Actual Profit.pdf" class="btn btn-secondary" style="padding: 0.85rem 1.5rem; font-size: 0.875rem;">
+                    <span>Download Full PDF (750KB) ↓</span>
+                </a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; padding-top: var(--space-6); border-top: 1px solid var(--border-subtle);">
+                <div>
+                    <span class="research-tag">PRIMARY RESEARCHER</span>
+                    <div style="font-family: var(--font-serif); font-size: 1rem; color: var(--text-primary);">Suraj Rohit Haldankar</div>
+                </div>
+                <div>
+                    <span class="research-tag">CORE DOMAINS</span>
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">Behavioural Quant · Cognitive Systems · Financial AI</div>
+                </div>
+                <div>
+                    <span class="research-tag">EMPIRICAL DATASET</span>
+                    <div style="font-size: 0.875rem; color: var(--text-secondary);">NSE HDFC Bank · SEC Disclosures · Knight Capital</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 02 — THE INSTITUTIONAL PROBLEM (PARADOX OF PERFORMANCE)
+   ========================================================================== -->
+<section id="problem" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">01 // THE INSTITUTIONAL PROBLEM</span>
+            <h2 class="section-title">The Paradox of Performance &amp; The Final Interpreter</h2>
+            <p class="section-subtitle">
+                Why sophisticated algorithms, massive capital reserves, and low-latency infrastructure persistently fail to eliminate the compounding 0.1% loss in high-stakes financial operations.
+            </p>
+        </div>
+
+        <div class="dual-column-grid" style="align-items: start;">
+            <div class="card card--accent-gold">
+                <div>
+                    <span class="card-tag card-tag--gold">THE STRUCTURAL BOTTLENECK</span>
+                    <h3 class="card-title">The "Last Mile" Interpretation Failure</h3>
+                    <p class="card-desc">
+                        Institutional finance has optimized data generation, transmission speed, and quantitative execution. However, critical capital decisions must ultimately pass through an interpretative node—either a biological human brain constrained by working memory limits or an artificial intelligence model operating without explicit institutional mandates.
+                    </p>
+                    <p class="card-desc" style="margin-bottom: 0;">
+                        When information presentation induces cognitive latency ($C_{loss}$), visual distortion, or unverified context assumptions, decision integrity breaks down before execution occurs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-tag">EPISTEMIC AXIOM</span>
+                    <h3 class="card-title">The Decision Pipeline Breakdown</h3>
+                    <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.25rem; margin-bottom: 1.25rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.65rem; font-family: var(--font-mono); font-size: 0.8125rem;">
+                            <div style="color: var(--text-muted);">01. Raw Market Data (SEC / Microstructure)</div>
+                            <div style="color: var(--text-muted); padding-left: 1rem;">↓</div>
+                            <div style="color: var(--text-muted);">02. Machine Analytical Output / Indicators</div>
+                            <div style="color: var(--text-muted); padding-left: 1rem;">↓</div>
+                            <div style="color: var(--accent-gold); font-weight: 600; background: var(--accent-gold-subtle); padding: 0.35rem 0.6rem; border: 1px solid var(--accent-gold-border); border-radius: 2px;">
+                                03. [CRITICAL NODE] Human / AI Contextual Interpretation
+                            </div>
+                            <div style="color: var(--text-muted); padding-left: 1rem;">↓</div>
+                            <div style="color: var(--text-primary);">04. Capital Commitment / Execution Outcome</div>
+                        </div>
+                    </div>
+                    <p class="card-desc" style="margin-bottom: 0; font-size: 0.875rem;">
+                        The 0.1% loss is not a result of market volatility or trader incompetence; it is a structural, compounding failure engineered at the interpretation layer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 03 — PRIMARY RESEARCH: HUMAN COGNITION (ACTUAL PROFIT)
+   ========================================================================== -->
+<section id="actual-profit" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="section-eyebrow section-eyebrow--gold" style="color: var(--accent-gold);">02 // PRIMARY RESEARCH PROGRAM · HUMAN COGNITION</span>
+                    <h2 class="section-title">Actual Profit: The Cognitive Architecture of Financial Decisions</h2>
+                </div>
+                <span class="status-pill status-pill--finding">12-PART DIGITAL MONOGRAPH</span>
+            </div>
+            <p class="section-subtitle">
+                A rigorous mathematical and behavioral treatise examining how visual layout, working memory saturation, and geometric scaling distortion induce systemic execution slippage.
+            </p>
+        </div>
+
+        <div class="cards-grid" style="margin-bottom: var(--space-8);">
+            <!-- Topic 01 -->
+            <div class="card">
+                <div>
+                    <span class="card-tag">BIOLOGICAL CONSTRAINT</span>
+                    <h3 class="card-title">The 4-Chunk Bottleneck</h3>
+                    <p class="card-desc">
+                        Human working memory is biologically limited to holding approximately four independent information chunks simultaneously. Market terminal interfaces presenting dozens of competing variables trigger neural waste and involuntary heuristic shortcuts.
+                    </p>
+                </div>
+                <a href="/research/actual-profit/chapter-02-human-processor/" class="btn btn-secondary btn-sm">Read Chapter 02 →</a>
+            </div>
+
+            <!-- Topic 02 -->
+            <div class="card">
+                <div>
+                    <span class="card-tag">PERCEPTUAL GEOMETRY</span>
+                    <h3 class="card-title">Y-Axis Scaling Distortion</h3>
+                    <p class="card-desc">
+                        Dynamic auto-scaling charting software artificially manipulates visual slope angles, causing a minor 0.5% fluctuation to appear geometrically identical to a severe 5.0% breakout, skewing human risk appraisal.
+                    </p>
+                </div>
+                <a href="/research/actual-profit/chapter-05-applied-case-studies/" class="btn btn-secondary btn-sm">Read Chapter 05 →</a>
+            </div>
+
+            <!-- Topic 03 -->
+            <div class="card">
+                <div>
+                    <span class="card-tag">AUDIT THEORY</span>
+                    <h3 class="card-title">White Paper Test Theory</h3>
+                    <p class="card-desc">
+                        A quantitative framework for stress-testing complex financial disclosures, prospectuses, and institutional documents to measure readability, cognitive load, and decision clarity prior to market release.
+                    </p>
+                </div>
+                <a href="/research/actual-profit/chapter-04-white-paper-test/" class="btn btn-secondary btn-sm">Read Chapter 04 →</a>
+            </div>
+        </div>
+
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: clamp(1.5rem, 3vw, 2.5rem); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem;">
+            <div>
+                <div style="font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-primary); margin-bottom: 0.25rem;">
+                    Actual Profit: Eliminating the 0.1% Loss in Decision Integrity
+                </div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0;">
+                    The master 12-part serialized monograph is available in full online reading format and downloadable archival PDF.
+                </p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="/research/actual-profit/" class="btn btn-primary btn-sm">Read 12-Part Digital Series →</a>
+                <a href="/publications/books/actual-profit/actual-profit-final.pdf" download="Actual Profit.pdf" class="btn btn-secondary btn-sm">Download Monograph PDF ↓</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 04 — SECONDARY RESEARCH: FINANCE + AI (DCM)
+   ========================================================================== -->
+<section id="dcm-ai" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="section-eyebrow section-eyebrow--gold" style="color: var(--accent-gold);">03 // FINANCE + AI RESEARCH SUB-STREAM · MODEL GOVERNANCE</span>
+                    <h2 class="section-title">Decision Context Models (DCM)</h2>
+                </div>
+                <span class="status-pill status-pill--evidence">EMPIRICAL PROTOTYPE 2026</span>
+            </div>
+            <p class="section-subtitle">
+                Resolving the Silent Assumption Trap and enforcing institutional decision mandates in Large Language Models without altering base neural weights.
+            </p>
+        </div>
+
+        <div class="axiom-banner" style="margin-bottom: var(--space-8);">
+            <div class="axiom-text">
+                FACTUAL CORRECTNESS ≠ CONTEXTUAL VALIDITY ≠ DECISION APPROPRIATENESS
+            </div>
+        </div>
+
+        <div class="dual-column-grid" style="margin-bottom: var(--space-8);">
+            <div class="card">
+                <div>
+                    <span class="card-tag card-tag--crimson" style="color: #f87171;">THE FAILURE MODE</span>
+                    <h3 class="card-title">The Silent Assumption Trap</h3>
+                    <p class="card-desc">
+                        When financial prompts lack explicit situational constraints, LLMs silently insert unstated default assumptions. The resulting output appears grammatically authoritative and mathematically correct, but remains contextually invalid for the specific risk hurdle, time horizon, or institutional mandate.
+                    </p>
+                </div>
+                <a href="/research/decision-context-model/" class="btn btn-secondary btn-sm">Explore DCM AI Architecture →</a>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-tag card-tag--gold">THE GOVERNANCE LAYER</span>
+                    <h3 class="card-title">Mandate-Conditioned Epistemic Control</h3>
+                    <p class="card-desc">
+                        A Decision Context Model (DCM) establishes a structured boundary constraint representing institutional loss thresholds and evidence requirements. It forces AI models to demote irrelevant metrics and explicitly flag <strong>Decision-Blocking Unknowns</strong> before capital commitment.
+                    </p>
+                </div>
+                <a href="/evidence/hdfc-experiment/" class="btn btn-primary btn-sm">View HDFC Empirical Evidence →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 05 — EMPIRICAL CASE STUDIES & EVIDENCE
+   ========================================================================== -->
+<section id="evidence" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">04 // EMPIRICAL OBSERVATIONS</span>
+            <h2 class="section-title">Structural Evidence &amp; Failure Case Studies</h2>
+            <p class="section-subtitle">
+                Empirical investigations grounding theoretical cognitive and machine models in verifiable institutional data.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Case 01 -->
+            <div class="card card--warning">
+                <div>
+                    <span class="card-tag" style="color: #f87171;">DISASTER POST-MORTEM</span>
+                    <h3 class="card-title">Knight Capital Group ($440M Loss)</h3>
+                    <p class="card-desc">
+                        Analysis of the 45-minute algorithmic execution breakdown on August 1, 2012. Deconstructs how the absence of deterministic reflection gates and visual status indicators allowed an unverified deployment error to execute 4 million unintended orders.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-4);">
+                    EVIDENCE: SEC Enforcement Release No. 70694
+                </div>
+            </div>
+
+            <!-- Case 02 -->
+            <div class="card">
+                <div>
+                    <span class="card-tag">STATISTICAL PARADOX</span>
+                    <h3 class="card-title">The SPIVA Scorecard Paradox</h3>
+                    <p class="card-desc">
+                        Investigation into why 80% to 90% of well-capitalized active investment managers consistently underperform passive benchmarks. Demonstrates that underperformance is driven by compounding cognitive slippage ($C_{loss}$) during acute volatility regimes.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-4);">
+                    EVIDENCE: S&amp;P Indices Versus Active (SPIVA) 2025/2026
+                </div>
+            </div>
+
+            <!-- Case 03 -->
+            <div class="card card--accent-gold">
+                <div>
+                    <span class="card-tag card-tag--gold">CONTROLLED EXPERIMENT</span>
+                    <h3 class="card-title">HDFC Bank DCM Prototype</h3>
+                    <p class="card-desc">
+                        Controlled empirical evaluation holding standardized NSE HDFC Bank financial disclosures invariant while testing output across 4 institutional mandates (Credit, Trading, Risk, Investment) with and without DCM conditioning.
+                    </p>
+                </div>
+                <div style="margin-top: var(--space-4);">
+                    <a href="/evidence/hdfc-experiment/" class="btn btn-secondary btn-sm">Inspect Comparison Matrices →</a>
+                </div>
+            </div>
+
+            <!-- Case 04: White Paper Test -->
+            <div class="card card--accent-gold">
+                <div>
+                    <span class="card-tag card-tag--gold">INTERACTIVE EXPERIMENT · EXP-2026-002</span>
+                    <h3 class="card-title">The White Paper Test</h3>
+                    <p class="card-desc">
+                        Live psychophysical demonstration measuring selective visual attention, peripheral exposure, and working memory limits under standardized 5.0-second A4 conditions.
+                    </p>
+                </div>
+                <div style="margin-top: var(--space-4);">
+                    <a href="/evidence/white-paper-test/" class="btn btn-secondary btn-sm">Run Interactive Experiment →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 06 — EPISTEMIC BOUNDS & ACADEMIC INQUIRY DISPATCH
+   ========================================================================== -->
+<section id="laboratory" class="section section-alt">
+    <div class="container">
+        <div class="dual-column-grid">
+            <!-- Left: Epistemic Bounds & Lab Governance -->
+            <div>
+                <span class="section-eyebrow">05 // SCIENTIFIC BOUNDARIES</span>
+                <h2 class="section-title">Methodology &amp; Epistemic Limits</h2>
+                <p class="section-subtitle" style="margin-bottom: var(--space-6);">
+                    The Haldankar Method Research Laboratory operates under strict scientific standards and complete methodological transparency.
+                </p>
+
+                <div class="callout callout-limitation">
+                    <div class="callout-title">[EPISTEMIC BOUNDARY &amp; NON-CLAIMS]</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5;">
+                        This laboratory publishes behavioral quantitative models, cognitive frameworks, and experimental AI governance architectures. This research does not claim automated alpha generation, does not modify base neural weights, and does not provide retail investment advice.
+                    </p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: var(--space-6);">
+                    <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-secondary);">
+                        <span style="color: var(--accent-gold);">ORCID ID:</span> 
+                        <a href="https://orcid.org/0009-0000-9372-059X" target="_blank" rel="noopener noreferrer" class="link-inline">0009-0000-9372-059X ↗</a>
+                    </div>
+                    <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-secondary);">
+                        <span style="color: var(--accent-gold);">RESEARCH REGISTRY:</span> Behavioral Quantitative &amp; Cognitive Systems
+                    </div>
+                    <div style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-secondary);">
+                        <span style="color: var(--accent-gold);">DATA COMPLIANCE:</span> DPDP Act 2023 / 2025 Compliant
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Institutional Collaboration Dispatch Form -->
+            <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: 2px; padding: clamp(1.5rem, 3vw, 2.25rem);">
+                <span class="research-tag research-tag--gold">ACADEMIC &amp; INSTITUTIONAL CORRESPONDENCE</span>
+                <h3 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--text-primary); margin-bottom: var(--space-2);">
+                    Institutional Inquiry Dispatch
+                </h3>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: var(--space-6);">
+                    Submit an inquiry for institutional research exchange, monograph citation requests, or decision-architecture evaluation.
+                </p>
+
+                <form id="collab-inquiry-form" action="/contact/submit/" method="POST">
+                    {% csrf_token %}
+                    <input type="text" name="honeypot" style="display: none;">
+
+                    <div class="form-group">
+                        <label class="form-label" for="inquiry-name">Full Name / Institutional Title</label>
+                        <input type="text" id="inquiry-name" name="name" class="form-control" placeholder="e.g. Dr. Alexander Vance, CIO" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="inquiry-email">Institutional Email Address</label>
+                        <input type="email" id="inquiry-email" name="email" class="form-control" placeholder="alexander@institution.edu" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="inquiry-type">Research Area</label>
+                        <select id="inquiry-type" name="inquiry_area" class="form-control" required style="background: var(--bg-surface); color: var(--text-primary);">
+                            <option value="Actual Profit Research">Actual Profit Research &amp; Cognitive Latency</option>
+                            <option value="Decision Context Models">Decision Context Models (DCM) &amp; AI Governance</option>
+                            <option value="White Paper Test Audit">White Paper Test Theory &amp; Interface Audit</option>
+                            <option value="Academic Collaboration">Academic Exchange &amp; Citation</option>
+                            <option value="General Institutional Inquiry">General Institutional Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="inquiry-message">Inquiry Overview</label>
+                        <textarea id="inquiry-message" name="message" class="form-control" placeholder="Detail the scope of your institutional inquiry or research interest..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        Transmit Institutional Inquiry →
+                    </button>
+
+                    <p class="form-privacy-note">
+                        Correspondence is processed in compliance with data privacy regulations. See <a href="/legal/privacy-policy/">Privacy Policy</a>.
+                    </p>
+
+                    <div id="collab-form-feedback" class="form-feedback" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

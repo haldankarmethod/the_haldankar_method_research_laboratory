@@ -1,0 +1,60 @@
+{% load static %}<!DOCTYPE html>
+<html lang="en" {% block html_attributes %}data-theme="dark"{% endblock %}>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}The Haldankar Method{% endblock %}</title>
+    <meta name="description" content="{% block description %}The Haldankar Method Research Laboratory: Independent research investigating financial decision integrity, human cognitive friction, and Finance + AI decision context models by Suraj Rohit Haldankar.{% endblock %}">
+    <meta name="author" content="Suraj Rohit Haldankar">
+    <meta name="keywords" content="{% block keywords %}The Haldankar Method, Actual Profit, Behavioural Quantitative Finance, Cognitive Friction, Decision Context Model, DCM, Financial AI, Model Risk, Suraj Rohit Haldankar, White Paper Test Theory, Y-Axis Distortion{% endblock %}">
+
+    {% block meta_extra %}{% endblock %}
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <!-- Core Stylesheets -->
+    <link rel="stylesheet" href="{% static 'css/global/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/nav.css' %}">
+    {% block extra_css %}{% endblock %}
+
+    {% if promo_eligible %}
+    <link rel="stylesheet" href="{% static 'css/components/promo.css' %}">
+    <script>
+        window.THM_PROMO_ELIGIBLE = true;
+        window.THM_PROMO_CONFIG = {
+            bookUrl: "/books/the-architecture-of-a-decision/",
+            thumbUrl: "{% static 'images/books/the-architecture-of-a-decision-cover.png' %}"
+        };
+    </script>
+    <script src="{% static 'js/components/promo-engine.js' %}" defer></script>
+    {% endif %}
+</head>
+<body>
+
+    <!-- Accessible Skip Link -->
+    <a href="#main-content" class="skip-link">{% block skip_link_text %}Skip to main research content{% endblock %}</a>
+
+    <!-- Reading Progress Indicator -->
+    <div id="scroll-progress" class="reading-progress-bar" aria-hidden="true"></div>
+
+    {% block pre_main %}{% endblock %}
+
+    <!-- Global Single-Bar Navigation Header -->
+    {% include 'partials/nav.html' %}
+
+    <main id="main-content" class="{% block main_classes %}{% endblock %}">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- SITE FOOTER -->
+    {% include 'partials/footer.html' %}
+
+    <!-- Client Scripts -->
+    <script src="{% static 'js/components/nav-interactions.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}The White Paper Test — Attentional Filtering Experiment — The Haldankar Method{% endblock %}
+{% block description %}Participate in the interactive White Paper Test evaluating foveal selective focus, peripheral eye tracking, and cognitive load capacity.{% endblock %}
+{% block keywords %}White Paper Test, Selective Attention, Cognitive Load, Working Memory, Attentional Filtering, Information Representation, Psychophysics, Suraj Rohit Haldankar{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/evidence/white_paper_test.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/evidence/white_paper_test.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<!-- ==========================================================================
+   SECTION 01 — EXPERIMENT IDENTITY & RESEARCH QUESTION
+   ========================================================================== -->
+<section id="hero" class="section" style="padding-top: clamp(3.5rem, 6vw, 5.5rem); padding-bottom: clamp(2.5rem, 4vw, 3.5rem);">
+    <div class="container">
+        <div style="max-width: 900px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: var(--space-4);">
+                <a href="/research/actual-profit/" class="status-pill status-pill--finding" style="text-decoration: none;">← ACTUAL PROFIT RESEARCH PROGRAM</a>
+                <span class="status-pill status-pill--evidence">EMPIRICAL DEMONSTRATION</span>
+                <span class="status-pill">ISO 216 / A4 CANVAS</span>
+                <span class="status-pill">AUGUST 2026</span>
+            </div>
+
+            <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: var(--space-3); letter-spacing: -0.02em;">
+                The White Paper Test
+            </h1>
+
+            <div style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.15rem, 2.2vw, 1.45rem); color: var(--accent-gold); margin-bottom: var(--space-4);">
+                Visual Attention, Peripheral Exposure, and Conscious Working Memory
+            </div>
+
+            <p class="lead-paragraph" style="color: var(--text-primary); line-height: 1.65; margin-bottom: var(--space-4);">
+                An interactive psychophysical demonstration isolating the boundary between targeted conscious visual fixation and unconscious peripheral retinal capture under controlled 5.0-second exposure conditions.
+            </p>
+
+            <!-- Scientific Method Progression Strip -->
+            <div class="scientific-method-strip" aria-label="Scientific Method Stages">
+                <span class="method-node method-node--active">[01 QUESTION]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[02 INSTRUCTION]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[03 EXPOSURE]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[04 OBSERVATION]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[05 INQUIRY]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[06 ANALYSIS]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[07 APPLICATION]</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 02 — LIVE FULL-VIEWPORT EXPERIMENT HARNESS
+   ========================================================================== -->
+<section id="interactive-harness" class="section section-alt" style="padding-top: var(--space-6); padding-bottom: var(--space-8);">
+    <div class="container">
+        <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+            <div class="section-header" style="text-align: center; margin-bottom: var(--space-6);">
+                <span class="section-eyebrow">01 // LIVE PSYCHOPHYSICAL TEST</span>
+                <h2 class="section-title">Participate in the White Paper Test</h2>
+                <p class="section-subtitle">
+                    Enter the dedicated full-screen laboratory environment to experience the controlled 5.0-second fixation experiment.
+                </p>
+            </div>
+
+            <!-- Full-Viewport Launch Station Card -->
+            <div style="background: #000000; border: 1px solid var(--accent-gold-border); border-radius: var(--border-radius); padding: clamp(2rem, 4vw, 3rem); box-shadow: 0 0 40px rgba(0, 0, 0, 0.85); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <span class="status-pill status-pill--evidence" style="margin-bottom: 1rem;">SOURCE EXPERIMENTAL IMAGE · NATIVE 2550 × 3300 ASPECT RATIO</span>
+                <h3 style="font-size: clamp(1.4rem, 2.5vw, 1.85rem); margin-bottom: 0.75rem; color: #ffffff;">
+                    Dedicated Full-Viewport Test Mode
+                </h3>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); max-width: 580px; margin-bottom: 2rem; line-height: 1.6;">
+                    To eliminate peripheral screen distractions, the experiment takes over the entire available browser viewport. You will receive an attention instruction and directional focus arrow before the stimulus is displayed.
+                </p>
+                <button type="button" class="btn btn-primary" data-action="launch-white-paper-test" style="padding: 0.9rem 2.5rem; font-size: 1rem; font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">
+                    Launch Experiment →
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 03 — EXPERIMENTAL GEOMETRY & CONTROL SPECIFICATION
+   ========================================================================== -->
+<section id="specification" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">02 // STANDARDIZED PROTOCOL</span>
+            <h2 class="section-title">Experimental Setup &amp; A4 Geometry</h2>
+            <p class="section-subtitle">
+                Rigorous dimensional parameters governing stimulus layout and attentional isolation.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <div class="card">
+                <div>
+                    <span class="card-tag">STANDARDIZED SHEET</span>
+                    <h3 class="card-title">ISO 216 / A4 Canvas</h3>
+                    <p class="card-desc">
+                        Physical aspect ratio of <strong>210 mm × 297 mm ($1 : \sqrt{2}$)</strong> rendered via vector SVG. Maintains exact proportionality across desktop, tablet, and mobile displays without distortion.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-4);">
+                    RATIO: 1 : 1.4142 · PURE WHITE (#FFFFFF)
+                </div>
+            </div>
+
+            <div class="card card--accent-gold">
+                <div>
+                    <span class="card-tag card-tag--gold">FIXATION ANCHOR</span>
+                    <h3 class="card-title">Top-Right Red Circle</h3>
+                    <p class="card-desc">
+                        Positioned at center coordinates $(192\text{mm}, 18\text{mm})$ with a radius of $24\text{mm}$. Exactly <strong>25% of the circle is cropped beyond the sheet border</strong> and <strong>75% is visible</strong>, serving as the solitary instructed visual target.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold); margin-top: var(--space-4);">
+                    COLOR: #E11D48 · 75% VISIBILITY
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-tag">PERIPHERAL STIMULI</span>
+                    <h3 class="card-title">30 Distinct Vector Shapes</h3>
+                    <p class="card-desc">
+                        Distributed across a $6 \times 5$ spatial matrix in the lower half ($Y \in [145, 275]\text{mm}$). Each shape features a distinct geometry with black outline ($1.5\text{px}$) and white fill.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-4);">
+                    COUNT: EXACTLY 30 SHAPES
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 04 — COGNITIVE THEORY & FINANCIAL INTERFACE APPLICATION
+   ========================================================================== -->
+<section id="theory" class="section section-alt">
+    <div class="container">
+        <div class="dual-column-grid" style="align-items: start;">
+            <div>
+                <span class="section-eyebrow">03 // COGNITIVE ARCHITECTURE</span>
+                <h2 class="section-title">Visual Filtering &amp; Working Memory</h2>
+                <p class="section-subtitle">
+                    Why unattended visual inputs create measurable upstream cognitive overhead.
+                </p>
+
+                <div style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.7; display: flex; flex-direction: column; gap: 1rem; margin-top: var(--space-4);">
+                    <p>
+                        The human visual apparatus does not filter sensory inputs at the retinal level. The eye captures the entire field of view and transmits raw spatial data directly to the primary visual cortex (V1/V2).
+                    </p>
+                    <p>
+                        Conscious attention operates like a narrow spotlight, constrained by the <strong>working memory bottleneck ($4 \pm 1$ independent chunks)</strong>. When instructed to focus on the red circle, the conscious mind isolates the target, while the unconscious brain continues to allocate neural bandwidth to process peripheral shapes.
+                    </p>
+                    <p>
+                        When the stimulus is removed after 5.0 seconds, participants consistently report recognizing that <em>"something was there"</em>, yet fail to recall the exact count or geometric categories.
+                    </p>
+                </div>
+            </div>
+
+            <div>
+                <span class="section-eyebrow" style="color: #60a5fa;">04 // INSTITUTIONAL TRADING APPLICATION</span>
+                <h2 class="section-title">The Combinatorial Explosion ($2^{100}$)</h2>
+                
+                <div class="card card--warning" style="margin-top: var(--space-4);">
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: #f87171; text-transform: uppercase; margin-bottom: 0.5rem;">
+                        THE TRADING SCREEN BOTTLENECK
+                    </div>
+                    <p style="font-size: 0.875rem; line-height: 1.65; color: var(--text-secondary); margin-bottom: 1rem;">
+                        A modern institutional market terminal displaying 20+ candlesticks, multiple indicator overlays (RSI, MACD, Moving Averages), and multi-timeframe feeds forces the human brain into an interpretive state space exceeding:
+                    </p>
+                    <div style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: #f87171; margin-bottom: 1rem;">
+                        2<sup>100</sup> Combinatorial Possibilities
+                    </div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; color: var(--text-secondary); margin-bottom: 0;">
+                        Just as peripheral shapes drain attentional resources during the White Paper Test, uncompressed financial screen clutter triggers biological decision fatigue and System 1 heuristic errors. Compressing multi-candlestick noise into single verified mandate metrics reduces cognitive load from $2^{100}$ to $2^0 = 1$.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 05 — EPISTEMIC BOUNDS & METHODOLOGICAL DISCLOSURE
+   ========================================================================== -->
+<section id="boundaries" class="section">
+    <div class="container">
+        <div style="max-width: 860px; margin: 0 auto;">
+            <div class="callout-limitation">
+                <div class="callout-title" style="color: #f87171; font-weight: 700; font-family: var(--font-mono); font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.5rem;">
+                    [EPISTEMIC BOUNDARIES &amp; SCIENTIFIC NON-CLAIMS]
+                </div>
+                <p style="font-size: 0.875rem; line-height: 1.65; color: #fca5a5; margin-bottom: 0.5rem;">
+                    <strong>Exploratory Demonstration Scope:</strong> The White Paper Test is provided as an interactive pedagogical and research demonstration illustrating selective attention and working memory constraints.
+                </p>
+                <p style="font-size: 0.875rem; line-height: 1.65; color: #fca5a5; margin-bottom: 0;">
+                    <strong>Explicit Non-Claims:</strong> This test does NOT perform direct neurological or metabolic measurements (such as ATP or glucose consumption) on the participant's brain, nor does it function as a clinical diagnostic tool for cognitive impairment.
+                </p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--border-subtle);">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+                    Principal Researcher: <strong style="color: var(--accent-gold);">Suraj Rohit Haldankar</strong> · The Haldankar Method Research Laboratory
+                </div>
+                <a href="/research/actual-profit/chapter-04-white-paper-test/" class="btn btn-secondary btn-sm">
+                    Read Monograph Chapter 04 →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

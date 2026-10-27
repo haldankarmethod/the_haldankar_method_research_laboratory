@@ -1,0 +1,502 @@
+/* ==========================================================================
+   WHITE PAPER TEST (EXP-2026-002) — FULL-VIEWPORT EXPERIMENT STYLESHEET
+   The Haldankar Method Research Laboratory
+   Compliance: ISO 216 / A4 Standard (210mm × 297mm, Aspect Ratio 1 : 1.4142)
+   ========================================================================== */
+
+/* Prevent background scrolling during experiment */
+body.experiment-active {
+    overflow: hidden !important;
+}
+
+/* Scientific Method Progression Strip */
+.scientific-method-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    margin: var(--space-6) 0;
+}
+
+.method-node {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+}
+
+.method-node--active {
+    background: var(--accent-gold-subtle);
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold-border);
+}
+
+.method-arrow {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   FULL-VIEWPORT TAKEOVER ENVIRONMENT
+   ========================================================================== */
+.experiment-viewport-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000000;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(1rem, 2.5vh, 2rem) clamp(1rem, 3vw, 2.5rem);
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.experiment-viewport-overlay.is-hidden {
+    display: none !important;
+}
+
+/* Top Control Bar with Centered Button */
+.exp-top-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+    min-height: 48px;
+}
+
+.exp-top-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-ready {
+    background: var(--accent-gold);
+    color: #000000;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+    letter-spacing: 0.08em;
+    padding: 0.75rem 2rem;
+    border-radius: 2px;
+    border: 1px solid #ffd700;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.45);
+    transition: all var(--transition-fast);
+    text-transform: uppercase;
+}
+
+.btn-ready:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px);
+}
+
+.btn-exit-test {
+    background: transparent;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-exit-test:hover {
+    color: #ffffff;
+    border-color: var(--text-muted);
+}
+
+/* Main Experiment Stage Area */
+.exp-stage-area {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.exp-stage {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.exp-stage.is-hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   DIRECT FULL-VIEWPORT STIMULUS STAGE (NATIVE 2550 × 3300 ASPECT RATIO)
+   ========================================================================== */
+.stimulus-viewport-stage {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.stimulus-viewport-stage img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    aspect-ratio: 2550 / 3300;
+    object-fit: contain;
+    display: block;
+    background: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+}
+
+.a4-viewport-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.a4-sheet-canvas {
+    height: min(84vh, 860px);
+    width: auto;
+    aspect-ratio: 2550 / 3300;
+    max-width: min(92vw, 680px);
+    background: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.35);
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.a4-sheet-canvas img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+    background: #ffffff;
+}
+
+.a4-svg-element {
+    width: 100%;
+    height: 100%;
+    display: block;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   ATTENTION FOCUS ARROW & INSTRUCTION (STATE 2)
+   ========================================================================== */
+.focus-viewport-stage {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 100;
+}
+
+.attention-instruction-box {
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 1.25rem;
+}
+
+.attention-headline {
+    font-family: var(--font-mono);
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+}
+
+.attention-subline {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+}
+
+/* Targeted Directional Focus Arrow */
+.focus-arrow-target-frame {
+    position: relative;
+    max-width: 96vw;
+    max-height: calc(100vh - 120px);
+    height: 100%;
+    width: auto;
+    aspect-ratio: 2550 / 3300;
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.focus-arrow-pointer {
+    position: absolute;
+    top: 4.5%;
+    right: 8.5%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.65rem;
+    color: #e11d48;
+    animation: arrowPulseRight 0.75s infinite alternate ease-in-out;
+}
+
+.focus-arrow-icon {
+    font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1;
+    transform: none;
+    color: #e11d48;
+    filter: drop-shadow(0 0 14px rgba(225, 29, 72, 0.9));
+}
+
+.focus-arrow-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #e11d48;
+    background: rgba(225, 29, 72, 0.15);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    border: 1px solid rgba(225, 29, 72, 0.4);
+    white-space: nowrap;
+}
+
+@keyframes arrowPulseRight {
+    0% {
+        transform: translateX(0) scale(0.96);
+    }
+    100% {
+        transform: translateX(12px) scale(1.04);
+    }
+}
+
+/* ==========================================================================
+   QUESTION SCREENS & CHIPS
+   ========================================================================== */
+.question-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    max-width: 640px;
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.question-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-gold);
+    margin-bottom: 0.5rem;
+}
+
+.question-prompt {
+    font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1.25rem;
+    line-height: 1.35;
+}
+
+.option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.option-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    padding: 0.9rem 1.15rem;
+    color: var(--text-primary);
+    font-size: 0.9375rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: left;
+}
+
+.option-btn:hover {
+    border-color: var(--accent-gold);
+    background: var(--bg-surface-elevated);
+}
+
+.option-btn.is-selected {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold-subtle);
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.chip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.chip-btn {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    padding: 0.75rem 0.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.chip-btn:hover {
+    border-color: var(--accent-gold);
+    color: var(--text-primary);
+}
+
+.chip-btn.is-selected {
+    border-color: var(--accent-gold);
+    background: var(--accent-gold-subtle);
+    color: var(--accent-gold);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   DEBRIEF & RESULTS SCREEN
+   ========================================================================== */
+.results-panel {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    max-width: 760px;
+    width: 100%;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.results-stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.25rem 0;
+}
+
+@media (max-width: 600px) {
+    .results-stats-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stat-box {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    padding: 1.15rem;
+}
+
+.stat-box--gold {
+    border-left: 3px solid var(--accent-gold);
+}
+
+.stat-box--blue {
+    border-left: 3px solid #60a5fa;
+}
+
+.stat-box-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.25rem;
+}
+
+.stat-box-val {
+    font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.mechanism-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    padding: 1.25rem;
+    margin: 1.25rem 0;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+}
+
+/* Callout Limitation */
+.callout-limitation {
+    background: rgba(225, 29, 72, 0.06);
+    border: 1px solid var(--warning-border);
+    border-left: 4px solid var(--warning-crimson);
+    border-radius: var(--border-radius);
+    padding: 1.25rem 1.5rem;
+    margin: var(--space-6) 0;
+}

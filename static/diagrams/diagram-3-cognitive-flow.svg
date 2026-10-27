@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%" role="img" aria-labelledby="d3-title d3-desc">
+    <title id="d3-title">Cowan's 4-Chunk Biological Bottleneck and Neural Waste Threshold</title>
+    <desc id="d3-desc">Mathematical visualization of working memory capacity limit (4 chunks) versus exponential cognitive friction when variables exceed four.</desc>
+    
+    <defs>
+        <style>
+            .panel { fill: #09090b; stroke: #27272a; stroke-width: 1; }
+            .chunk-active { fill: rgba(198, 162, 39, 0.15); stroke: #c6a227; stroke-width: 1; }
+            .chunk-overflow { fill: rgba(153, 27, 27, 0.2); stroke: #991b1b; stroke-width: 1; stroke-dasharray: 3,3; }
+            .t-mono { font-family: 'JetBrains Mono', monospace; font-size: 10px; fill: #a1a1aa; }
+            .t-gold { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; fill: #c6a227; }
+            .t-crimson { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; fill: #f87171; }
+            .t-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; fill: #f4f4f5; }
+            .t-body { font-family: 'Inter', sans-serif; font-size: 11px; fill: #d4d4d8; line-height: 1.4; }
+        </style>
+    </defs>
+
+    <!-- Left Box: Biological Limit (4 Chunks) -->
+    <g transform="translate(30, 20)">
+        <rect class="panel" width="350" height="200" rx="2" style="stroke: #c6a227;"/>
+        <text x="16" y="26" class="t-gold">ZONE 01 · OPTIMAL BIOLOGICAL WORKING MEMORY</text>
+        <text x="16" y="48" class="t-title">Cowan's Limit (4 ± 1 Chunks)</text>
+        <text x="16" y="68" class="t-body">System 2 executive processor retains full synthesis capacity.</text>
+        
+        <!-- 4 Active Chunks -->
+        <g transform="translate(16, 85)">
+            <rect class="chunk-active" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#c6a227;">CHUNK 1</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px;">Primary</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px;">Price Trend</text>
+        </g>
+        <g transform="translate(96, 85)">
+            <rect class="chunk-active" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#c6a227;">CHUNK 2</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px;">Volume</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px;">Liquidity</text>
+        </g>
+        <g transform="translate(176, 85)">
+            <rect class="chunk-active" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#c6a227;">CHUNK 3</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px;">Key Support</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px;">/ Resistance</text>
+        </g>
+        <g transform="translate(256, 85)">
+            <rect class="chunk-active" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#c6a227;">CHUNK 4</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px;">Macro Risk</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px;">Hurdle</text>
+        </g>
+    </g>
+
+    <!-- Right Box: Neural Waste Zone (Saturation) -->
+    <g transform="translate(420, 20)">
+        <rect class="panel" width="350" height="200" rx="2" style="stroke: #991b1b;"/>
+        <text x="16" y="26" class="t-crimson">ZONE 02 · NEURAL WASTE &amp; HEURISTIC SHORTCUTS</text>
+        <text x="16" y="48" class="t-title">Information Saturation (>4 Chunks)</text>
+        <text x="16" y="68" class="t-body">Terminal clutter triggers cognitive fatigue and involuntary errors.</text>
+        
+        <!-- Overflowing Chunks -->
+        <g transform="translate(16, 85)">
+            <rect class="chunk-overflow" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#f87171;">CHUNK 5</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px; fill:#fca5a5;">Oscillator</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px; fill:#fca5a5;">Noise</text>
+        </g>
+        <g transform="translate(96, 85)">
+            <rect class="chunk-overflow" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#f87171;">CHUNK 6</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px; fill:#fca5a5;">Order Book</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px; fill:#fca5a5;">Flashes</text>
+        </g>
+        <g transform="translate(176, 85)">
+            <rect class="chunk-overflow" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#f87171;">CHUNK 7</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px; fill:#fca5a5;">News Feed</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px; fill:#fca5a5;">Spam</text>
+        </g>
+        <g transform="translate(256, 85)">
+            <rect class="chunk-overflow" width="70" height="90" rx="2"/>
+            <text x="8" y="20" class="t-mono" style="fill:#f87171;">CHUNK N...</text>
+            <text x="8" y="45" class="t-body" style="font-size:10px; fill:#fca5a5;">Cognitive</text>
+            <text x="8" y="60" class="t-body" style="font-size:10px; fill:#fca5a5;">Collapse</text>
+        </g>
+    </g>
+</svg>

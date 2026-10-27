@@ -1,0 +1,440 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Actual Profit: Eliminating the 0.1% Loss in Decision Integrity — The Haldankar Method{% endblock %}
+{% block description %}Actual Profit: A serialized research monograph deconstructing downstream human cognitive bottlenecks, Y-axis visual chart distortion, and White Paper Test Theory in finance.{% endblock %}
+{% block keywords %}The Haldankar Method, Actual Profit, Monograph, Cognitive Friction, Working Memory, Chart Distortion, White Paper Test, Suraj Rohit Haldankar{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/research/actual_profit/series.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/research/actual_profit/series.js' %}"></script>
+{% endblock %}
+
+{% block pre_main %}
+<!-- Table of Contents Slide-Out Drawer for Mobile / Quick Access -->
+<div class="toc-overlay" id="tocOverlay" aria-hidden="true"></div>
+<aside class="toc-drawer" id="tocDrawer" aria-label="Monograph Navigation Drawer">
+    <div class="toc-drawer__header">
+        <span class="toc-drawer__title">Actual Profit Monograph</span>
+        <button type="button" class="toc-drawer__close" id="tocCloseBtn" aria-label="Close Table of Contents">&times;</button>
+    </div>
+    <div class="toc-drawer__body">
+        <ul class="toc-nav-list">
+            <li class="toc-nav-item is-current"><a href="/research/actual-profit/"><span class="toc-nav-num">00</span><span>Series Hub &amp; Overview</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-01-system-architecture/"><span class="toc-nav-num">01</span><span>System Architecture — The Understanding Steps</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-02-human-processor/"><span class="toc-nav-num">02</span><span>Biological Constraint — The Human Processor</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-03-screen/"><span class="toc-nav-num">03</span><span>The Screen Chapter — Perceptual Competition</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-04-white-paper-test/"><span class="toc-nav-num">04</span><span>White Paper Test Theory</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-05-applied-case-studies/"><span class="toc-nav-num">05</span><span>Applied Case Studies — Decoding Friction &amp; Y-Axis</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-06-decision-integrity/"><span class="toc-nav-num">06</span><span>Chaos &amp; Breakdown of Decision Integrity</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-07-dimensionality/"><span class="toc-nav-num">07</span><span>The Curse of Dimensionality in Trading</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-08-advanced-algorithm/"><span class="toc-nav-num">08</span><span>The Myth of the Advanced Algorithm</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/chapter-09-closing-perspective/"><span class="toc-nav-num">09</span><span>A Small Message from the Author</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/who-should-read/"><span class="toc-nav-num">—</span><span>Who Should Read This Monograph</span></a></li>
+            <li class="toc-nav-item"><a href="/research/actual-profit/legal-notice/"><span class="toc-nav-num">—</span><span>Legal Notice &amp; Disclaimers</span></a></li>
+        </ul>
+    </div>
+</aside>
+{% endblock %}
+
+{% block content %}
+<!-- ==========================================================================
+   SECTION 01 — MONOGRAPH HERO & CORE THESIS
+   ========================================================================== -->
+<section class="section" style="padding-top: clamp(3.5rem, 6vw, 5.5rem); padding-bottom: clamp(2.5rem, 4vw, 3.5rem);">
+    <div class="container">
+        <div style="max-width: 840px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: var(--space-4);">
+                <span class="status-pill status-pill--finding">PRIMARY RESEARCH PROGRAM</span>
+                <span class="status-pill">12-PART DIGITAL MONOGRAPH</span>
+                <span class="status-pill">FIRST EDITION 2026</span>
+            </div>
+
+            <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: var(--space-3); letter-spacing: -0.02em;">
+                Actual Profit
+            </h1>
+
+            <div style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.25rem, 2.5vw, 1.65rem); color: var(--accent-gold); margin-bottom: var(--space-4);">
+                Eliminating the 0.1% Loss in Decision Integrity
+            </div>
+
+            <p class="lead-paragraph" style="color: var(--text-primary); line-height: 1.6; margin-bottom: var(--space-6);">
+                A behavioral quantitative treatise investigating why high-resource financial institutions leak critical margin in the final mile of data interpretation.
+            </p>
+
+            <!-- The Core Question Box -->
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-left: 3px solid var(--accent-gold); border-radius: 2px; padding: 1.5rem; margin-bottom: var(--space-6);">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem;">
+                    THE CENTRAL RESEARCH QUESTION
+                </div>
+                <p style="font-size: 1.1rem; color: var(--text-primary); line-height: 1.5; margin-bottom: 0.5rem; font-weight: 500;">
+                    Why do highly qualified financial professionals, supported by virtually unlimited capital and advanced analytical systems, persistently make costly decision errors when interpreting market data?
+                </p>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0;">
+                    Actual Profit examines the physiological and structural gap between high-velocity financial information and the biological working memory constraints of the human brain.
+                </p>
+            </div>
+
+            <!-- Action CTAs -->
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-bottom: var(--space-6);">
+                <a href="/research/actual-profit/chapter-01-system-architecture/" class="btn btn-primary" style="padding: 0.85rem 1.75rem;">
+                    <span>Start Reading: Chapter 01 →</span>
+                </a>
+                <a href="/publications/books/actual-profit/actual-profit-final.pdf" download="Actual Profit.pdf" class="btn btn-secondary" style="padding: 0.85rem 1.5rem;">
+                    <span>Download Full PDF Monograph (750KB) ↓</span>
+                </a>
+                <a href="/research/actual-profit/who-should-read/" class="btn btn-secondary" style="padding: 0.85rem 1.25rem;">
+                    <span>Who Should Read This →</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 02 — THE 4-CHUNK BOTTLENECK & CONCEPTUAL ARCHITECTURE
+   ========================================================================== -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">01 // THEORETICAL FOUNDATION</span>
+            <h2 class="section-title">The 4-Chunk Biological Bottleneck</h2>
+            <p class="section-subtitle">
+                Cognitive Friction ($C_{loss}$) occurs when information density exceeds biological working memory thresholds.
+            </p>
+        </div>
+
+        <div class="dual-column-grid" style="align-items: start; margin-bottom: var(--space-8);">
+            <div class="card card--accent-gold">
+                <div>
+                    <span class="card-tag card-tag--gold">BIOLOGICAL WORKING MEMORY</span>
+                    <h3 class="card-title">The Human Processing Threshold</h3>
+                    <p class="card-desc">
+                        Cognitive science establishes that human working memory can simultaneously maintain only approximately four independent chunks of conceptual information ($4 \pm 1$).
+                    </p>
+                    <p class="card-desc" style="margin-bottom: 0;">
+                        When a trading interface or analytical document presents dozens of simultaneous indicators, price streams, and visual geometries, working memory saturates instantly. The brain is forced to discard critical context and rely on sub-optimal heuristic execution shortcuts.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-tag">THE DATA PIPELINE</span>
+                    <h3 class="card-title">Cognitive Slippage Formulation</h3>
+                    <div style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.25rem; margin-bottom: 1.25rem; font-family: var(--font-mono); font-size: 0.8125rem;">
+                        <div style="color: var(--accent-gold); margin-bottom: 0.5rem; font-weight: 600;">
+                            C_loss = f(Visual_Density, Scale_Distortion, Working_Memory_Saturation)
+                        </div>
+                        <div style="color: var(--text-secondary); line-height: 1.6; font-size: 0.75rem;">
+                            Where $C_{loss}$ represents the structural margin leakage occurring between theoretical quantitative edge and realized execution outcome.
+                        </div>
+                    </div>
+                    <p class="card-desc" style="font-size: 0.875rem; margin-bottom: 0;">
+                        Eliminating the 0.1% loss requires redesigning the information architecture to respect biological processing boundaries rather than piling more indicators onto the screen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 03 — 12-PART DIGITAL MONOGRAPH CHAPTER ROADMAP
+   ========================================================================== -->
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <div>
+                    <span class="section-eyebrow">02 // COMPLETE MONOGRAPH SEQUENCE</span>
+                    <h2 class="section-title">Chapter Roadmap &amp; Table of Contents</h2>
+                </div>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">9 Chapters · 2 Context Guides · Linear Sequence</span>
+            </div>
+            <p class="section-subtitle">
+                Navigate directly to any section of the research monograph or progress sequentially through the digital series.
+            </p>
+        </div>
+
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1rem;">
+            
+            <!-- Chapter 01 -->
+            <a href="/research/actual-profit/chapter-01-system-architecture/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 01</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">SYSTEM ARCHITECTURE</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    The Understanding Steps
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    A 5-stage progression mapping how market observers perceive, internalize, evaluate, and execute decisions under volatility.
+                </p>
+            </a>
+
+            <!-- Chapter 02 -->
+            <a href="/research/actual-profit/chapter-02-human-processor/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 02</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">BIOLOGICAL CONSTRAINT</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    The Human Processor
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    The four-chunk working memory bottleneck and why high-density financial interfaces trigger involuntary heuristic degradation.
+                </p>
+            </a>
+
+            <!-- Chapter 03 -->
+            <a href="/research/actual-profit/chapter-03-screen/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 03</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">PERCEPTUAL COMPETITION</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    The Screen Chapter
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    Deconstructing how multi-monitor layouts, dynamic color flashes, and layout noise compete for visual cognitive bandwidth.
+                </p>
+            </a>
+
+            <!-- Chapter 04 -->
+            <a href="/research/actual-profit/chapter-04-white-paper-test/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 04</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">AUDIT THEORY</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    White Paper Test Theory
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    A rigorous quantitative methodology for auditing institutional disclosures, prospectuses, and research reports.
+                </p>
+            </a>
+
+            <!-- Chapter 05 -->
+            <a href="/research/actual-profit/chapter-05-applied-case-studies/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 05</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">EMPIRICAL STUDIES</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    Applied Case Studies &amp; Y-Axis Distortion
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    Empirical analysis of non-linear Y-axis scaling distortion and real-world trading microstructure case studies.
+                </p>
+            </a>
+
+            <!-- Chapter 06 -->
+            <a href="/research/actual-profit/chapter-06-decision-integrity/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 06</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">CHAOS &amp; BREAKDOWN</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    Breakdown of Decision Integrity
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    The cascading failure path: from perceptual ambiguity to emotional volatility, panic execution, and catastrophic drawdown.
+                </p>
+            </a>
+
+            <!-- Chapter 07 -->
+            <a href="/research/actual-profit/chapter-07-dimensionality/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 07</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">COMBINATORIAL EXPLOSION</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    The Curse of Dimensionality (2¹⁰⁰)
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    Why combining multiple technical indicators leads to a mathematical combinatorial explosion that destroys predictive reliability.
+                </p>
+            </a>
+
+            <!-- Chapter 08 -->
+            <a href="/research/actual-profit/chapter-08-advanced-algorithm/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 08</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">QUANTITATIVE SKEPTICISM</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    The Myth of the Advanced Algorithm
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    Exposing why complex black-box mathematical models fail when interface design and human interpretation are ignored.
+                </p>
+            </a>
+
+            <!-- Chapter 09 -->
+            <a href="/research/actual-profit/chapter-09-closing-perspective/" class="card" style="text-decoration: none; padding: 1.25rem;">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--accent-gold);">CHAPTER 09</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">CLOSING PERSPECTIVE</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    A Perspective on Decision Architecture
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    Final synthesis on cultivating structural discipline, respecting epistemic bounds, and protecting capital integrity.
+                </p>
+            </a>
+
+            <!-- Guide 01 -->
+            <a href="/research/actual-profit/who-should-read/" class="card" style="text-decoration: none; padding: 1.25rem; border-left: 2px solid var(--text-muted);">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: var(--text-muted);">GUIDE</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">AUDIENCE ALIGNMENT</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    Who Should Read This Monograph
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    Target profiles: Portfolio Managers, CIOs, Quants, Risk Officers, and Financial UI/UX Architects.
+                </p>
+            </a>
+
+            <!-- Guide 02 -->
+            <a href="/research/actual-profit/legal-notice/" class="card" style="text-decoration: none; padding: 1.25rem; border-left: 2px solid var(--warning-crimson);">
+                <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.35rem;">
+                    <span style="font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; color: #f87171;">DISCLAIMER</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.6875rem; color: var(--text-muted);">LEGAL &amp; EPISTEMIC</span>
+                </div>
+                <h3 style="font-family: var(--font-serif); font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.35rem;">
+                    Legal Notice &amp; Research Disclaimers
+                </h3>
+                <p style="font-size: 0.8125rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                    Formal statement of research bounds, intellectual property ownership, and regulatory non-claims.
+                </p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 04 — PROGRAM EMPIRICAL EVIDENCE: THE WHITE PAPER TEST
+   ========================================================================== -->
+<section id="evidence" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">03 // ACTUAL PROFIT EMPIRICAL EVIDENCE</span>
+            <h2 class="section-title">Program Empirical Validation</h2>
+            <p class="section-subtitle">
+                Interactive psychophysical experiment isolating biological working memory capacity ($4 \pm 1$) and visual attentional filtering.
+            </p>
+        </div>
+
+        <div class="card card--accent-gold" style="padding: clamp(1.5rem, 3vw, 2.25rem);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <span class="status-pill status-pill--evidence">[LIVE EXPERIMENTAL EVIDENCE]</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold);">5.0-SECOND FIXATION PROTOCOL</span>
+            </div>
+
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.5rem;">
+                The White Paper Test: Selective Visual Attention Experiment
+            </h3>
+
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: var(--space-4);">
+                The empirical counterpart to Monograph Chapter 04. Demonstrates the boundary between instructed foveal fixation and uninstructed peripheral capture on a standardized ISO 216 / A4 canvas, proving why uncompressed visual clutter induces $C_{loss}$ in high-frequency trading.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; padding-top: var(--space-4); border-top: 1px solid var(--border-subtle);">
+                <a href="/evidence/white-paper-test/" class="btn btn-primary btn-sm">
+                    Launch Interactive Experiment →
+                </a>
+                <a href="/research/actual-profit/chapter-04-white-paper-test/" class="btn btn-secondary btn-sm">
+                    Read Audit Theory (Ch. 04) →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 05 — PUBLICATION, PDF & ACADEMIC CITATION ENGINE
+   ========================================================================== -->
+<section id="publication" class="section">
+    <div class="container">
+        <div class="dual-column-grid" style="align-items: start;">
+            <div>
+                <span class="section-eyebrow">04 // PUBLICATION &amp; DOWNLOAD</span>
+                <h2 class="section-title">Monograph &amp; PDF Access</h2>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+                    The complete 12-part serialized monograph is published and preserved in digital PDF format for institutional, academic, and regulatory review.
+                </p>
+
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.25rem; margin-bottom: 1rem;">
+                    <div style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">
+                        Actual Profit: Eliminating the 0.1% Loss in Decision Integrity
+                    </div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold); margin-bottom: 0.75rem;">
+                        PUBLISHED: AUGUST 2026 · 750 KB PDF
+                    </div>
+                    <a href="/publications/books/actual-profit/actual-profit-final.pdf" download="Actual Profit.pdf" class="btn btn-gold btn-sm">
+                        Download Full PDF Monograph ↓
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <span class="section-eyebrow">05 // CITATION ENGINE</span>
+                <h2 class="section-title">Cite Actual Profit</h2>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-3);">
+                    Standard citation formats for referencing this research in academic literature or institutional white papers:
+                </p>
+
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
+                    <span style="color: var(--accent-gold);">APA:</span> Haldankar, S. R. (2026). <em>Actual Profit: Eliminating the 0.1% Loss in Decision Integrity</em>. The Haldankar Method Research Laboratory. ORCID: 0009-0000-9372-059X.
+                </div>
+
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); line-height: 1.5;">
+                    <span style="color: var(--accent-gold);">BibTeX:</span><br>
+                    @book{haldankar2026actualprofit,<br>
+                    &nbsp;&nbsp;author = {Haldankar, Suraj Rohit},<br>
+                    &nbsp;&nbsp;title = {Actual Profit: Eliminating the 0.1% Loss in Decision Integrity},<br>
+                    &nbsp;&nbsp;publisher = {The Haldankar Method Research Laboratory},<br>
+                    &nbsp;&nbsp;year = {2026},<br>
+                    &nbsp;&nbsp;note = {ORCID: 0009-0000-9372-059X}<br>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 06 — SCIENTIFIC BOUNDARIES & DISCLAIMERS
+   ========================================================================== -->
+<section id="boundaries" class="section section-alt">
+    <div class="container">
+        <div style="max-width: 860px; margin: 0 auto;">
+            <div class="callout callout-limitation" style="margin-top: 0;">
+                <div class="callout-title">[EPISTEMIC BOUNDARIES &amp; SCIENTIFIC NON-CLAIMS]</div>
+                <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5; margin-bottom: 0.5rem;">
+                    <strong>Theoretical &amp; Behavioral Research Scope:</strong> Actual Profit is published strictly for cognitive systems, financial interface engineering, and decision-integrity research.
+                </p>
+                <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5; margin-bottom: 0;">
+                    <strong>Non-Advisory Disclaimer:</strong> This monograph does not offer commercial trading algorithms, financial execution software, asset management services, or individual investment advice.
+                </p>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: var(--space-6); padding-top: var(--space-4); border-top: 1px solid var(--border-subtle);">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+                    Principal Researcher: <strong style="color: var(--accent-gold);">Suraj Rohit Haldankar</strong> · ORCID: <a href="https://orcid.org/0009-0000-9372-059X" target="_blank" rel="noopener noreferrer" class="link-inline">0009-0000-9372-059X ↗</a>
+                </div>
+                <a href="/research/" class="btn btn-secondary btn-sm">
+                    ← Back to Research Hub Overview
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,406 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Decision Context Models (DCM) — The Haldankar Method{% endblock %}
+{% block description %}Decision Context Models: Governing the Silent Assumption Trap and statistical default pathways in Large Language Models (LLMs) under model risk management frameworks.{% endblock %}
+{% block keywords %}Decision Context Model, DCM, AI Model Risk, Large Language Models, Silent Assumption Trap, Model Risk Management, SR 26-2, Suraj Rohit Haldankar{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/research/dcm/dcm-research.css' %}">
+{% endblock %}
+
+{% block content %}
+<!-- ==========================================================================
+   SECTION 01 — HERO / EPISTEMIC POSITIONING
+   ========================================================================== -->
+<section id="hero" class="section" style="padding-top: clamp(3.5rem, 6vw, 5.5rem); padding-bottom: clamp(2.5rem, 4vw, 3.5rem);">
+    <div class="container">
+        <div style="max-width: 860px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: var(--space-4);">
+                <span class="status-pill status-pill--evidence">FINANCE + AI RESEARCH SUB-STREAM</span>
+                <span class="status-pill">EPISTEMIC MODEL GOVERNANCE</span>
+                <span class="status-pill">SR 26-2 ALIGNED</span>
+            </div>
+
+            <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: var(--space-4); letter-spacing: -0.02em;">
+                Decision Context Models (DCM)
+            </h1>
+
+            <div style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.25rem, 2.5vw, 1.5rem); color: var(--accent-gold); margin-bottom: var(--space-4);">
+                Governing the Silent Assumption Trap in Financial Large Language Models
+            </div>
+
+            <p class="lead-paragraph" style="color: var(--text-primary); line-height: 1.6; margin-bottom: var(--space-6);">
+                A financial AI system can correctly calculate every metric, parse every SEC filing, and generate grammatically flawless prose—while still producing an analysis that is fundamentally hazardous for the specific institutional decision being made.
+            </p>
+
+            <div class="axiom-banner" style="margin-bottom: var(--space-6); text-align: left; padding: 1.25rem 1.5rem;">
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.35rem;">
+                    CORE EPISTEMIC AXIOM
+                </div>
+                <div class="axiom-text" style="font-size: 1.05rem;">
+                    FACTUAL CORRECTNESS ≠ CONTEXTUAL VALIDITY ≠ DECISION APPROPRIATENESS
+                </div>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+                <a href="/evidence/hdfc-experiment/" class="btn btn-primary" style="padding: 0.85rem 1.75rem;">
+                    <span>Inspect HDFC Bank Empirical Data →</span>
+                </a>
+                <a href="#silent-assumption" class="btn btn-secondary" style="padding: 0.85rem 1.5rem;">
+                    <span>The Silent Assumption Trap ↓</span>
+                </a>
+                <a href="#governance" class="btn btn-secondary" style="padding: 0.85rem 1.5rem;">
+                    <span>Regulatory Fit (SR 26-2) ↓</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 02 — THE SILENT ASSUMPTION TRAP
+   ========================================================================== -->
+<section id="silent-assumption" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow" style="color: #f87171;">01 // EPISTEMIC DIAGNOSTICS</span>
+            <h2 class="section-title">The Silent Assumption Trap</h2>
+            <p class="section-subtitle">
+                How statistical pattern completion resolves contextual ambiguity with unstated, unverified default parameters.
+            </p>
+        </div>
+
+        <div class="dual-column-grid" style="align-items: start; margin-bottom: var(--space-8);">
+            <div class="card card--warning">
+                <div>
+                    <span class="card-tag" style="color: #f87171;">THE FAILURE MECHANISM</span>
+                    <h3 class="card-title">Beyond Simple Hallucination</h3>
+                    <p class="card-desc">
+                        Financial model risk is rarely as simple as an AI inventing fictitious balance sheet numbers. A far more pervasive and insidious failure occurs when <strong>the extracted numbers are 100% factually accurate, but the decision context in which they are evaluated is unstated and unverified</strong>.
+                    </p>
+                    <p class="card-desc" style="margin-bottom: 0;">
+                        Under prompt ambiguity, contemporary LLMs do not halt execution to request critical risk hurdles. Instead, they silently assume default horizons and risk tolerances, generating plausible recommendations that directly violate institutional mandates.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="card-tag card-tag--gold">THE EPISTEMIC INSIGHT</span>
+                    <h3 class="card-title">Data Carries No Inherent Universal Meaning</h3>
+                    <p class="card-desc">
+                        In institutional finance, a 15% ROE or a 1.2% NPA ratio has no single, static operational meaning.
+                    </p>
+                    <p class="card-desc" style="margin-bottom: 0;">
+                        To a <strong>Credit Committee</strong>, capital preservation and liquidation hurdles dominate; high ROE driven by aggressive leverage is a disqualifying risk. To an <strong>Active Trading Desk</strong>, immediate liquidity depth and volatility dominate; long-term book value is irrelevant. Without explicit mandate conditioning, AI models conflate these distinct evaluation geometries.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Causal Pathway Flowchart -->
+        <div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: var(--space-3); text-align: center;">
+                Observed Causal Pathway of Contextual AI Failure
+            </div>
+
+            <div class="pathway-grid">
+                <div class="pathway-node">
+                    <div class="pathway-node__step">STEP 01</div>
+                    <div class="pathway-node__title">Incomplete Mandate</div>
+                    <div class="pathway-node__desc">User prompt leaves loss hurdle, horizon, or liquidity constraints unstated.</div>
+                </div>
+
+                <div class="pathway-node pathway-node--alert">
+                    <div class="pathway-node__step">STEP 02</div>
+                    <div class="pathway-node__title">Unrecognized Uncertainty</div>
+                    <div class="pathway-node__desc">Base LLM fails to recognize that critical operational context is absent.</div>
+                </div>
+
+                <div class="pathway-node pathway-node--alert">
+                    <div class="pathway-node__step">STEP 03</div>
+                    <div class="pathway-node__title">Silent Assumption</div>
+                    <div class="pathway-node__desc">Model inserts statistical default assumptions to complete the text generation loop.</div>
+                </div>
+
+                <div class="pathway-node">
+                    <div class="pathway-node__step">STEP 04</div>
+                    <div class="pathway-node__title">Hazardous Output</div>
+                    <div class="pathway-node__desc">Produces grammatically authoritative analysis that is operationally invalid.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 03 — THE TWO-LAYER ARCHITECTURE
+   ========================================================================== -->
+<section id="architecture" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">02 // SYSTEMIC FRAMEWORK</span>
+            <h2 class="section-title">The Two-Layer Contextual Architecture</h2>
+            <p class="section-subtitle">
+                Separating Upstream Epistemic Decision Governance from Downstream Cognitive Presentation.
+            </p>
+        </div>
+
+        <div class="two-layer-box">
+            <div class="layer-card layer-card--upstream">
+                <div class="layer-card__tag">UPSTREAM GOVERNANCE LAYER</div>
+                <h3 class="layer-card__title">Decision Context Models (DCM)</h3>
+                <p class="layer-card__desc">
+                    A structured, formal representation of the decision-maker's institutional mandate, horizon, capital allocation rules, and evidence hurdles. The DCM constrains AI reasoning to evaluate invariant financial data through explicit loss thresholds and halts execution on <strong>Decision-Blocking Unknowns</strong>.
+                </p>
+            </div>
+
+            <div class="layer-card layer-card--downstream">
+                <div class="layer-card__tag">DOWNSTREAM COGNITIVE LAYER</div>
+                <h3 class="layer-card__title">Cognitive Communication (Actual Profit)</h3>
+                <p class="layer-card__desc">
+                    Scaffolds verified machine analysis for human comprehension. Respects Cowan's 4-chunk working memory bottleneck, enforces visual hierarchy, and eliminates layout noise to ensure rapid, error-free interpretation by senior human executives.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 04 — INSTITUTIONAL MANDATES TAXONOMY
+   ========================================================================== -->
+<section id="mandates" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">03 // MANDATE TAXONOMY</span>
+            <h2 class="section-title">The Four Institutional Decision Mandates</h2>
+            <p class="section-subtitle">
+                How the same standardized financial evidence produces fundamentally different analytical geometries when evaluated under distinct institutional constraints.
+            </p>
+        </div>
+
+        <div class="cards-grid">
+            <!-- Mandate A -->
+            <div class="card">
+                <div>
+                    <span class="card-tag card-tag--gold">MANDATE A · CREDIT COMMITTEE</span>
+                    <h3 class="card-title">Senior Credit Evaluation</h3>
+                    <p class="card-desc">
+                        Primary focus: Solvency, capital adequacy (Tier-1 ratio), interest coverage, asset quality (GNPA/NNPA), and worst-case liquidation recovery. Equity growth and earnings momentum are demoted.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); padding-top: var(--space-2); border-top: 1px solid var(--border-subtle);">
+                    HORIZON: 3–5 YEARS (DEBT MATURITY)
+                </div>
+            </div>
+
+            <!-- Mandate B -->
+            <div class="card">
+                <div>
+                    <span class="card-tag" style="color: #60a5fa;">MANDATE B · ACTIVE TRADING</span>
+                    <h3 class="card-title">Trading Desk Liquidity</h3>
+                    <p class="card-desc">
+                        Primary focus: Short-horizon volatility, bid-ask spread liquidity, immediate catalyst sensitivity, and short-term capital velocity. Long-term loan book quality is subordinate to execution friction.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); padding-top: var(--space-2); border-top: 1px solid var(--border-subtle);">
+                    HORIZON: INTRADAY TO 5 DAYS
+                </div>
+            </div>
+
+            <!-- Mandate C -->
+            <div class="card">
+                <div>
+                    <span class="card-tag card-tag--crimson" style="color: #f87171;">MANDATE C · RISK MANAGEMENT</span>
+                    <h3 class="card-title">Stress-Testing &amp; Tail Risk</h3>
+                    <p class="card-desc">
+                        Primary focus: Macroeconomic shocks, sector loan concentration, collateral degradation, and regulatory capital adequacy breaches under 3-standard-deviation stress regimes.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); padding-top: var(--space-2); border-top: 1px solid var(--border-subtle);">
+                    HORIZON: STRESS SCENARIO HORIZON
+                </div>
+            </div>
+
+            <!-- Mandate D -->
+            <div class="card">
+                <div>
+                    <span class="card-tag card-tag--gold">MANDATE D · VALUE INVESTMENT</span>
+                    <h3 class="card-title">Long-Term Capital Allocation</h3>
+                    <p class="card-desc">
+                        Primary focus: Sustainable Return on Equity (ROE), deposit franchise durability (CASA ratio), compounding power, and management underwriting discipline across full credit cycles.
+                    </p>
+                </div>
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); padding-top: var(--space-2); border-top: 1px solid var(--border-subtle);">
+                    HORIZON: 5–10 YEAR CYCLE
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 05 — REGULATORY FIT & MODEL RISK GOVERNANCE
+   ========================================================================== -->
+<section id="governance" class="section">
+    <div class="container">
+        <div class="dual-column-grid" style="align-items: start;">
+            <div>
+                <span class="section-eyebrow">04 // MODEL RISK GOVERNANCE</span>
+                <h2 class="section-title">Institutional Regulatory Alignment</h2>
+                <p class="section-subtitle">
+                    Aligning financial AI verification with 2026 Model Risk Management standards.
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: var(--space-6);">
+                    <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.25rem;">
+                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.25rem;">
+                            FEDERAL RESERVE / OCC SR 26-2 &amp; SR 11-7
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                            DCM enforces explicit conceptual soundness, contextual validation, and documented model limitations before machine output is consumed by decision-makers.
+                        </p>
+                    </div>
+
+                    <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.25rem;">
+                        <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold); font-weight: 700; margin-bottom: 0.25rem;">
+                            SEBI &amp; RBI AI ACCOUNTABILITY FRAMEWORKS
+                        </div>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 0; line-height: 1.5;">
+                            Ensures that AI systems deployed across Indian capital markets maintain full auditability, traceable institutional mandates, and deterministic risk boundaries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <span class="section-eyebrow">05 // SCIENTIFIC BOUNDARIES</span>
+                <h2 class="section-title">Epistemic Limitations &amp; Non-Claims</h2>
+                
+                <div class="callout callout-limitation" style="margin-top: var(--space-6);">
+                    <div class="callout-title">[MANDATORY GOVERNANCE NOTICE &amp; IP PERIMETER]</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5; margin-bottom: 0.5rem;">
+                        1. Decision Context Models (DCM) do not alter the base neural weights of foundational language models.
+                    </p>
+                    <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5; margin-bottom: 0.5rem;">
+                        2. DCM is an epistemological governance framework, not an automated trade-execution engine or black-box alpha generator.
+                    </p>
+                    <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5; margin-bottom: 0;">
+                        3. All empirical demonstrations represent invariant testing on historical SEC / NSE banking filings.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.25rem; margin-top: var(--space-6); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <div style="font-family: var(--font-serif); font-size: 1.05rem; color: var(--text-primary);">
+                            Inspect the Empirical Evidence
+                        </div>
+                        <div style="font-size: 0.8125rem; color: var(--text-muted);">
+                            See side-by-side matrices on HDFC Bank standardized data.
+                        </div>
+                    </div>
+                    <a href="/evidence/hdfc-experiment/" class="btn btn-primary btn-sm">View HDFC Experiment →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 06 — PROGRAM EMPIRICAL EVIDENCE: HDFC BANK EXPERIMENT
+   ========================================================================== -->
+<section id="evidence" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">06 // DCM EMPIRICAL EVIDENCE</span>
+            <h2 class="section-title">Controlled Empirical Dataset Release</h2>
+            <p class="section-subtitle">
+                Evaluating Large Language Model output transformation matrices under four institutional mandates with invariant financial disclosures.
+            </p>
+        </div>
+
+        <div class="card card--accent-gold" style="padding: clamp(1.5rem, 3vw, 2.25rem);">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
+                <span class="status-pill status-pill--evidence">[EMPIRICAL DATASET RELEASE]</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold);">INVARIANT CONTROL: NSE HDFC BANK</span>
+            </div>
+
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-primary); margin-bottom: 0.5rem;">
+                HDFC Bank Controlled Experiment: Mandate Output Geometry
+            </h3>
+
+            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.65; margin-bottom: var(--space-4);">
+                Proves that an AI model's analytical prioritization, risk boundaries, and verdict can be fundamentally altered across four institutional mandates (Credit, Trading, Risk, Investment) without altering a single underlying financial data point. Demonstrates deterministic invalidation gates and Decision-Blocking Unknowns.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; padding-top: var(--space-4); border-top: 1px solid var(--border-subtle);">
+                <a href="/evidence/hdfc-experiment/" class="btn btn-primary btn-sm">
+                    Inspect Dataset Matrices →
+                </a>
+                <a href="/evidence/hdfc-experiment/#unknowns" class="btn btn-secondary btn-sm">
+                    View Decision-Blocking Unknowns Protocol →
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 07 — PUBLICATION & CITATION ENGINE FOR DCM
+   ========================================================================== -->
+<section id="publication" class="section">
+    <div class="container">
+        <div class="dual-column-grid" style="align-items: start;">
+            <div>
+                <span class="section-eyebrow">07 // PUBLICATION SPECIFICATION</span>
+                <h2 class="section-title">Research Artifact &amp; Model Risk Citation</h2>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-4);">
+                    Registered research specification for institutional model risk validation under SR 26-2 and regulatory auditability standards.
+                </p>
+
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.25rem;">
+                    <div style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-primary); margin-bottom: 0.25rem;">
+                        Decision Context Models: Governing the Silent Assumption Trap
+                    </div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-gold); margin-bottom: 0.75rem;">
+                        VER 2.2 · MODEL RISK MANAGEMENT SPECIFICATION
+                    </div>
+                    <a href="/publications/" class="btn btn-secondary btn-sm">
+                        View Archival Repository →
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <span class="section-eyebrow">08 // CITATION ENGINE</span>
+                <h2 class="section-title">Cite DCM Research</h2>
+                <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: var(--space-3);">
+                    Standard academic and institutional citation formats:
+                </p>
+
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 0.75rem;">
+                    <span style="color: var(--accent-gold);">APA:</span> Haldankar, S. R. (2026). <em>Decision Context Models: Epistemic Governance &amp; Model Risk Alignment (SR 26-2)</em>. The Haldankar Method Research Laboratory. ORCID: 0009-0000-9372-059X.
+                </div>
+
+                <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1rem; font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); line-height: 1.5;">
+                    <span style="color: var(--accent-gold);">BibTeX:</span><br>
+                    @techreport{haldankar2026dcm,<br>
+                    &nbsp;&nbsp;author = {Haldankar, Suraj Rohit},<br>
+                    &nbsp;&nbsp;title = {Decision Context Models: Epistemic Governance \& Model Risk Alignment},<br>
+                    &nbsp;&nbsp;institution = {The Haldankar Method Research Laboratory},<br>
+                    &nbsp;&nbsp;year = {2026},<br>
+                    &nbsp;&nbsp;note = {ORCID: 0009-0000-9372-059X}<br>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: var(--space-8); padding-top: var(--space-4); border-top: 1px solid var(--border-subtle); text-align: center;">
+            <a href="/research/" class="btn btn-secondary btn-sm">
+                ← Back to Master Research Hub Overview
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

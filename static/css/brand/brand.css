@@ -1,0 +1,84 @@
+/**
+ * THE HALDANKAR METHOD — Brand Identity System
+ * Scoped variables and self-contained typography wordmark.
+ */
+
+:root {
+    --hb-ink: #1c1917;
+    --hb-gold: #c6a227;
+    --hb-gold-contrast: #8c6f14;
+    --hb-gold-border: rgba(198, 162, 39, 0.4);
+    --hb-gold-border-hover: rgba(198, 162, 39, 0.85);
+}
+
+[data-theme="dark"] {
+    --hb-ink: #f5f5f4;
+    --hb-gold: #d4af37;
+    --hb-gold-contrast: #dfbd46;
+    --hb-gold-border: rgba(212, 175, 55, 0.4);
+    --hb-gold-border-hover: rgba(212, 175, 55, 0.85);
+}
+
+/* --------------------------------------------------------------------------
+   BRAND LOCKUP
+   -------------------------------------------------------------------------- */
+.haldankar-brand {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    line-height: 1;
+    user-select: none;
+    transition: opacity 0.15s ease;
+}
+
+.haldankar-brand:hover {
+    opacity: 0.92;
+}
+
+.haldankar-brand:focus-visible {
+    outline: 2px solid var(--hb-gold);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Title Container */
+.haldankar-brand__title {
+    display: inline-flex;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', 'SF Mono', Consolas, Menlo, monospace;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* "THE" & "METHOD" Words */
+.haldankar-brand__word--muted {
+    color: var(--hb-ink) !important;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+}
+
+/* "HALDANKAR" Hero Word */
+.haldankar-brand__word--gold {
+    color: var(--hb-gold) !important;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    margin: 0 0.42em;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    border-bottom: 1.5px solid var(--hb-gold-border);
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.haldankar-brand:hover .haldankar-brand__word--gold {
+    border-bottom-color: var(--hb-gold-border-hover);
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER VARIANT
+   -------------------------------------------------------------------------- */
+.footer-brand-lockup .haldankar-brand__title {
+    font-size: 1rem;
+}

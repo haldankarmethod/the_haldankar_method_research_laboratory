@@ -1,0 +1,995 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Educational Foundation — Human Information Literacy & Professional Document Reading — The Haldankar Method{% endblock %}
+{% block description %}Educational foundation for Service 01 of the Haldankar Method: human information literacy, White Paper Test Theory model, and the Professional Document Reading Framework (PDRF 8 Rules).{% endblock %}
+
+{% block extra_css %}
+<style>
+    .foundation-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: clamp(2rem, 4vw, 4rem) 1.5rem;
+    }
+
+    .prose-block p {
+        font-size: 1.03125rem;
+        line-height: 1.7;
+        color: var(--text-secondary, #d4d4d8);
+        margin-bottom: 1.25rem;
+        max-width: 820px;
+    }
+
+    .status-pill {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.65rem;
+        border-radius: 2px;
+        background: var(--bg-surface-elevated, #121215);
+        color: var(--text-muted, #a1a1aa);
+        border: 1px solid var(--border-subtle, #27272a);
+    }
+
+    .status-pill--gold {
+        color: var(--accent-gold, #c6a227);
+        border-color: var(--accent-gold-border, rgba(198, 162, 39, 0.35));
+        background: var(--accent-gold-subtle, rgba(198, 162, 39, 0.08));
+    }
+
+    .foundation-header {
+        border-bottom: 1px solid var(--border-subtle, #27272a);
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .foundation-title {
+        font-family: var(--font-serif, Georgia, serif);
+        font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+        line-height: 1.15;
+        color: var(--text-primary, #f4f4f5);
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.02em;
+    }
+
+    .foundation-subtitle {
+        font-family: var(--font-serif, Georgia, serif);
+        font-style: italic;
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        color: var(--accent-gold, #c6a227);
+    }
+
+    .part-section {
+        margin-bottom: 3.5rem;
+    }
+
+    .part-tag {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.8125rem;
+        color: var(--accent-gold, #c6a227);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .part-heading {
+        font-family: var(--font-serif, Georgia, serif);
+        font-size: clamp(1.6rem, 2.8vw, 2rem);
+        color: var(--text-primary, #f4f4f5);
+        margin-bottom: 1.25rem;
+        line-height: 1.25;
+    }
+
+    .sub-heading {
+        font-family: var(--font-serif, Georgia, serif);
+        font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+        color: var(--text-primary, #f4f4f5);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .prose-block p {
+        font-size: 1.03125rem;
+        line-height: 1.7;
+        color: var(--text-secondary, #d4d4d8);
+        margin-bottom: 1.25rem;
+    }
+
+    /* SECTION 01 — Visual Information Pipeline */
+    .info-pipeline {
+        background: var(--bg-surface, #09090b);
+        border: 1px solid var(--border-subtle, #27272a);
+        border-radius: 4px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .pipeline-header {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted, #a1a1aa);
+        margin-bottom: 1rem;
+        border-bottom: 1px dashed var(--border-subtle, #27272a);
+        padding-bottom: 0.4rem;
+    }
+
+    .pipeline-grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .pipeline-node {
+        background: var(--bg-surface-elevated, #121215);
+        color: var(--text-primary, #f4f4f5);
+        padding: 0.4rem 0.7rem;
+        border: 1px solid var(--border-strong, #3f3f46);
+        border-radius: 3px;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.8125rem;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .pipeline-node:hover, .pipeline-node.active {
+        border-color: var(--accent-gold, #c6a227);
+        color: var(--accent-gold, #c6a227);
+        background: var(--accent-gold-subtle, rgba(198, 162, 39, 0.08));
+    }
+
+    .pipeline-arrow {
+        color: var(--accent-gold, #c6a227);
+        font-weight: bold;
+    }
+
+    .pipeline-tooltip {
+        margin-top: 1rem;
+        background: var(--bg-surface-elevated, #121215);
+        border-left: 3px solid var(--accent-gold, #c6a227);
+        padding: 0.75rem 1rem;
+        border-radius: 0 3px 3px 0;
+        font-size: 0.875rem;
+        color: var(--text-secondary, #d4d4d8);
+    }
+
+    /* RULE CARD CLIENT MENU ITEM STYLE */
+    .rule-card {
+        background: var(--bg-surface, #09090b);
+        border: 1px solid var(--border-subtle, #27272a);
+        border-radius: 4px;
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        transition: border-color 0.2s ease;
+    }
+
+    .rule-card:hover {
+        border-color: var(--accent-gold-border, rgba(198, 162, 39, 0.35));
+    }
+
+    .rule-header-strip {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border-subtle, #27272a);
+        padding-bottom: 0.5rem;
+    }
+
+    .rule-badge {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.75rem;
+        color: var(--accent-gold, #c6a227);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+    }
+
+    .rule-title {
+        font-family: var(--font-serif, Georgia, serif);
+        font-size: 1.3rem;
+        color: var(--text-primary, #f4f4f5);
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .client-qa-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.85rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .client-qa-box {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        padding: 0.85rem 1rem;
+        border-radius: 3px;
+    }
+
+    .client-qa-label {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--accent-gold, #c6a227);
+        margin-bottom: 0.35rem;
+        font-weight: 600;
+    }
+
+    .client-qa-val {
+        font-size: 0.89375rem;
+        line-height: 1.55;
+        color: var(--text-secondary, #d4d4d8);
+        margin: 0;
+    }
+
+    /* SPECIFIC VISUAL COMPONENTS FOR RULES */
+    /* Rule 001 - Load Meter */
+    .load-meter-card {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        padding: 1rem 1.25rem;
+        border-radius: 3px;
+        margin-top: 1rem;
+    }
+
+    .meter-bar {
+        height: 12px;
+        background: #27272a;
+        border-radius: 6px;
+        overflow: hidden;
+        margin: 0.5rem 0;
+    }
+
+    .meter-fill {
+        height: 100%;
+        width: 82%;
+        background: linear-gradient(90deg, var(--accent-gold, #c6a227) 0%, #eab308 100%);
+    }
+
+    /* Rule 002 - Saccade Diagram */
+    .saccade-diagram {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        padding: 1rem 1.25rem;
+        border-radius: 3px;
+        margin-top: 1rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.8125rem;
+        color: var(--text-secondary, #d4d4d8);
+    }
+
+    /* Rule 003 - Foveal Visual Map */
+    .foveal-map-container {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        border-radius: 3px;
+        padding: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .foveal-svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Rule 004 - Energy Bar */
+    .energy-bar-container {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        border-radius: 3px;
+        padding: 1rem 1.25rem;
+        margin-top: 1rem;
+    }
+
+    .energy-bar {
+        display: flex;
+        height: 24px;
+        border-radius: 3px;
+        overflow: hidden;
+        margin: 0.6rem 0;
+    }
+
+    .energy-segment--intrinsic {
+        background: var(--accent-gold, #c6a227);
+        width: 45%;
+    }
+
+    .energy-segment--friction {
+        background: #eab308;
+        width: 35%;
+    }
+
+    .energy-segment--capacity {
+        background: #27272a;
+        width: 20%;
+    }
+
+    .energy-legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.85rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.72rem;
+        color: var(--text-muted, #a1a1aa);
+    }
+
+    .legend-dot {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: 0.3rem;
+    }
+
+    /* Rule 005 - Checklist */
+    .checklist-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.65rem;
+        margin-top: 0.85rem;
+    }
+
+    .check-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+        background: var(--bg-surface-elevated, #121215);
+        padding: 0.65rem 0.85rem;
+        border-radius: 3px;
+        font-size: 0.875rem;
+        color: var(--text-secondary, #d4d4d8);
+        border: 1px solid var(--border-subtle, #27272a);
+    }
+
+    /* Rule 006 - Medium Matrix */
+    .medium-matrix-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 0.85rem;
+        margin-top: 0.85rem;
+    }
+
+    .medium-box {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        padding: 0.85rem 1rem;
+        border-radius: 3px;
+    }
+
+    /* Rule 007 - Decision Tree */
+    .tree-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 0.85rem;
+        margin-top: 0.85rem;
+    }
+
+    .tree-branch {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        padding: 0.85rem 1rem;
+        border-radius: 3px;
+    }
+
+    .tree-task {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78125rem;
+        color: var(--accent-gold, #c6a227);
+        margin-bottom: 0.3rem;
+        font-weight: 600;
+    }
+
+    .tree-path {
+        font-size: 0.84375rem;
+        color: var(--text-secondary, #d4d4d8);
+        line-height: 1.5;
+    }
+
+    /* Rule 008 - Comparative Matrix */
+    .contrast-matrix {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+        margin-top: 0.85rem;
+    }
+
+    .matrix-card-inner {
+        background: var(--bg-surface-elevated, #121215);
+        border: 1px solid var(--border-subtle, #27272a);
+        border-radius: 3px;
+        padding: 1rem 1.15rem;
+    }
+
+    .matrix-card-inner--pro {
+        border-color: var(--accent-gold-border, rgba(198, 162, 39, 0.35));
+    }
+
+    .matrix-quote {
+        font-style: italic;
+        color: var(--text-secondary, #d4d4d8);
+        font-size: 0.89375rem;
+        margin-bottom: 0.5rem;
+        border-left: 2px solid var(--accent-gold, #c6a227);
+        padding-left: 0.6rem;
+    }
+
+    /* Service Boundary & Disclaimers */
+    .service-boundary-card {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.25rem;
+        margin: 1.5rem 0;
+    }
+
+    .boundary-panel {
+        background: var(--bg-surface, #09090b);
+        border: 1px solid var(--border-subtle, #27272a);
+        border-radius: 4px;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .boundary-panel--service {
+        border-color: var(--accent-gold-border, rgba(198, 162, 39, 0.35));
+        background: var(--bg-surface-elevated, #121215);
+    }
+
+    .callout-box {
+        background: var(--bg-surface-elevated, #121215);
+        border-left: 3px solid var(--accent-gold, #c6a227);
+        padding: 1.1rem 1.35rem;
+        margin: 1.5rem 0;
+        border-radius: 0 4px 4px 0;
+        max-width: 820px;
+    }
+
+    .callout-box--limitation {
+        border-left-color: #eab308;
+        background: rgba(234, 179, 8, 0.04);
+    }
+
+    .callout-title {
+        font-family: var(--font-mono, monospace);
+        font-size: 0.78125rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent-gold, #c6a227);
+        margin-bottom: 0.4rem;
+        font-weight: 600;
+    }
+
+    .callout-box--limitation .callout-title {
+        color: #eab308;
+    }
+
+    .callout-text {
+        font-size: 0.921875rem;
+        line-height: 1.6;
+        color: var(--text-primary, #f4f4f5);
+        margin: 0;
+    }
+
+    .research-gateway-card {
+        background: var(--bg-surface, #09090b);
+        border: 1px solid var(--accent-gold-border, rgba(198, 162, 39, 0.35));
+        border-left: 4px solid var(--accent-gold, #c6a227);
+        border-radius: 4px;
+        padding: 1.25rem 1.5rem;
+        margin: 1.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .gateway-title {
+        font-family: var(--font-serif, Georgia, serif);
+        font-size: 1.1rem;
+        color: var(--text-primary, #f4f4f5);
+        margin: 0;
+    }
+
+    .gateway-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono, monospace);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--text-inverse, #000000);
+        background: var(--accent-gold, #c6a227);
+        padding: 0.65rem 1.15rem;
+        border-radius: 3px;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+
+    .gateway-btn:hover {
+        background: var(--accent-hover, #d4af37);
+        color: var(--text-inverse, #000000);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="foundation-container">
+    
+    <!-- HEADER -->
+    <header class="foundation-header">
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+            <span class="status-pill status-pill--gold">Service 01 — Knowledge Sharing</span>
+            <span class="status-pill">Educational Foundation</span>
+            <span class="status-pill">The Haldankar Method</span>
+        </div>
+        <h1 class="foundation-title">Educational Foundation</h1>
+        <div class="foundation-subtitle">Human Information Literacy &amp; Professional Document Reading</div>
+    </header>
+
+    <!-- PART 01 — FOUNDATION 01: HUMAN INFORMATION LITERACY -->
+    <section id="part-01" class="part-section">
+        <span class="part-tag">FOUNDATION 01</span>
+        <h2 class="part-heading">Human Information Literacy: The Interaction Layer</h2>
+
+        <div class="prose-block">
+            <p>
+                Human Information Literacy is an educational orientation designed to examine how the human visual and cognitive system interacts with information. Before investigating specific document reading techniques, the learner must analyze this foundational interaction.
+            </p>
+
+            <!-- SECTION 01: 9-Stage Visual Information Pipeline -->
+            <div class="info-pipeline">
+                <div class="pipeline-header">Visual Information Interaction Pipeline</div>
+                <div class="pipeline-grid">
+                    <span class="pipeline-node active" data-desc="Human System: The biological visual and cognitive architecture of the reader.">Human System</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node" data-desc="Visual Access: Retinal field presence of printed or digital text.">Visual Access</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node" data-desc="Attention: Active foveal fixation and selective resource deployment.">Attention</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node" data-desc="Cognitive Processing: Working memory decoding and semantic interpretation.">Processing</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node" data-desc="Cognitive Efficiency: Achieving deep comprehension with minimal extraneous friction.">Efficiency</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node" data-desc="Information Environment: Physical display conditions, text scaling, and spatial topology.">Environment</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node" data-desc="Adaptation: Strategic navigation adjustments based on task output.">Adaptation</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node" data-desc="Understanding: Accurate mental model construction of complex subjects.">Understanding</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-node pipeline-node--highlight" data-desc="Professional Information Use: Flawless decision execution in high-stakes environments.">Professional Use</span>
+                </div>
+                <div id="pipeline-tooltip" class="pipeline-tooltip">
+                    Select any stage above to inspect its operational role in human information processing.
+                </div>
+            </div>
+
+            <p>
+                This domain is broader than document reading alone: reading is one key application, but human information interaction also occurs across digital screens, structured interfaces, and complex technical environments. It establishes that visual access is distinct from comprehension, and that being capable of reading something does not mean the reading condition is cognitively efficient.
+            </p>
+
+            <div class="callout-box">
+                <div class="callout-title">Conceptual Terminology — Why "Human Information Literacy"?</div>
+                <div class="callout-text">
+                    Originally labeled <em>"Scope of This Method"</em> (describing only a methodological boundary), the term was refined to <strong>"Human Information Literacy"</strong> to communicate what the learner develops: a professional conceptual framework governing visual attention, cognitive processing, reading environments, and cognitive efficiency.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PART 02 — FOUNDATION 02: WHITE PAPER TEST THEORY -->
+    <section id="part-02" class="part-section">
+        <span class="part-tag">FOUNDATION 02</span>
+        <h2 class="part-heading">White Paper Test Theory: Attentional Foundation</h2>
+
+        <div class="prose-block">
+            <p>
+                The White Paper Test Theory serves as the practical conceptual foundation used to understand the relationship between visual exposure, deliberate attention, cognitive processing, and understanding prior to studying the operational rules of the Professional Document Reading Framework (PDRF).
+            </p>
+
+            <div class="flow-chain-card" style="background: var(--bg-surface); border: 1px solid var(--border-subtle); padding: 1.25rem; border-radius: 4px; margin: 1.5rem 0;">
+                <div class="pipeline-header">Core Processing Model</div>
+                <div class="flow-chain-list" style="display: flex; gap: 0.5rem; align-items: center; font-family: monospace; font-size: 0.8125rem;">
+                    <span class="flow-node" style="background: var(--bg-surface-elevated); padding: 0.35rem 0.65rem; border: 1px solid var(--border-strong); border-radius: 3px;">Visual Exposure</span>
+                    <span style="color: var(--accent-gold);">→</span>
+                    <span class="flow-node" style="background: var(--bg-surface-elevated); padding: 0.35rem 0.65rem; border: 1px solid var(--border-strong); border-radius: 3px;">Attention</span>
+                    <span style="color: var(--accent-gold);">→</span>
+                    <span class="flow-node" style="background: var(--bg-surface-elevated); padding: 0.35rem 0.65rem; border: 1px solid var(--border-strong); border-radius: 3px;">Processing</span>
+                    <span style="color: var(--accent-gold);">→</span>
+                    <span class="flow-node" style="background: var(--accent-gold-subtle); color: var(--accent-gold); border: 1px solid var(--accent-gold-border); padding: 0.35rem 0.65rem; border-radius: 3px;">Understanding</span>
+                </div>
+            </div>
+
+            <p>
+                <strong>The Core Idea:</strong> A person is shown a white sheet containing a red circle and other background visual elements and instructed:
+            </p>
+
+            <div style="font-family: monospace; font-size: 1rem; color: var(--accent-gold); background: var(--bg-surface-elevated); padding: 0.65rem 1rem; border: 1px solid var(--accent-gold-border); border-radius: 4px; margin: 1rem 0; text-align: center;">
+                “Look only at the red circle. Nothing else.”
+            </div>
+
+            <p>
+                The essential conceptual point is that information can remain present in the visual environment without becoming the primary object of conscious attention, creating a fundamental distinction between what is present and what we intend to attend to.
+            </p>
+
+            <p>
+                <strong>Why It Matters:</strong> Professional documents and information environments contain numerous visual elements beyond the immediate task. Professional information use therefore requires conscious awareness of the distinction between information being present in the visual field, information receiving active attention, and information being understood.
+            </p>
+
+            <div class="callout-box callout-box--limitation">
+                <div class="callout-title">Scientific Boundary</div>
+                <div class="callout-text">
+                    The White Paper Test Theory is used here as a practical conceptual model, not as proof that every unattended visual element consumes a precisely measurable quantity of cognitive energy or as a universal law of brain function.
+                </div>
+            </div>
+
+            <div class="research-gateway-card">
+                <div>
+                    <h3 class="gateway-title">Want to examine the experiment in detail?</h3>
+                </div>
+                <a href="/research/actual-profit/chapter-04-white-paper-test/" class="gateway-btn">
+                    <span>Explore the Complete White Paper Test</span>
+                    <span>→</span>
+                </a>
+            </div>
+
+            <p style="font-style: italic; color: var(--text-muted); margin-top: 1rem;">
+                The White Paper Test Theory provides the attentional foundation for the 8 rules that follow below.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       PART 03 — PROFESSIONAL DOCUMENT READING FRAMEWORK (THE 8 RULES)
+       ========================================================================== -->
+    <section id="part-03" class="part-section">
+        <span class="part-tag">PART 03</span>
+        <h2 class="part-heading">Professional Document Reading Framework (The 8 Rules)</h2>
+        <p style="font-size: 1.03125rem; color: var(--text-secondary); margin-bottom: 2rem;">
+            The eight rules below form the complete educational framework of Service 01. Each rule represents an essential principle of cognitive ergonomics designed to optimize how you process complex professional documents.
+        </p>
+
+        <!-- RULE 001 -->
+        <article class="rule-card" id="rule-001">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 001</span>
+                <span class="status-pill">Cognitive Alertness</span>
+            </div>
+            <h3 class="rule-title">Cognitive Load Is Not Directly Reported to the Reader</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Your brain does not send an explicit warning alert when working memory is overloaded during dense reading.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">You can experience mental exhaustion, reduced comprehension, and visual fatigue without knowing why.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Stop relying on subjective feelings of energy; structure your reading session with mandatory pause intervals.</p>
+                </div>
+            </div>
+
+            <div class="load-meter-card">
+                <div class="pipeline-header">Silent Working Memory Saturation Meter</div>
+                <div class="meter-bar"><div class="meter-fill"></div></div>
+                <div style="display: flex; justify-content: space-between; font-family: monospace; font-size: 0.72rem; color: var(--text-muted);">
+                    <span>Baseline Focus (0%)</span>
+                    <span style="color: #eab308; font-weight: bold;">Unperceived Saturation (82%)</span>
+                    <span>Brain Exhaustion (100%)</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- RULE 002 -->
+        <article class="rule-card" id="rule-002">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 002</span>
+                <span class="status-pill">Visual Mechanics</span>
+            </div>
+            <h3 class="rule-title">Not All Visual and Cognitive Processing Is Conscious</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Rapid eye movements (saccades) and visual fixations occur automatically beneath conscious awareness.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">Poor layout forces your eyes into micro-regressions, consuming cognitive energy before semantic decoding begins.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Format documents into clear visual anchors so eye fixations land on key semantic data naturally.</p>
+                </div>
+            </div>
+
+            <div class="saccade-diagram">
+                <div class="pipeline-header">Subconscious Visual Mechanics</div>
+                <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; text-align: center;">
+                    <div style="background: #18181b; padding: 0.5rem 0.75rem; border-radius: 3px; flex: 1;">
+                        <span style="color: var(--accent-gold); font-weight: bold;">Saccadic Jump</span><br>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">20–30ms Rapid Jump (No Data)</span>
+                    </div>
+                    <span style="color: var(--accent-gold); align-self: center;">→</span>
+                    <div style="background: #18181b; padding: 0.5rem 0.75rem; border-radius: 3px; flex: 1;">
+                        <span style="color: var(--accent-gold); font-weight: bold;">Foveal Fixation</span><br>
+                        <span style="font-size: 0.75rem; color: var(--text-muted);">200–300ms Data Extraction</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- RULE 003 -->
+        <article class="rule-card" id="rule-003">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 003</span>
+                <span class="status-pill">Attentional Filter</span>
+            </div>
+            <h3 class="rule-title">Visual Access Is Not the Same as Comprehension</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Text being present in your visual field ($\text{Visual Access}$) does not mean your brain processed or understood it.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">Critical disclosures or contract liability clauses can be printed on the page yet go completely unperceived.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Never assume a document was understood simply because your eye passed over the printed lines.</p>
+                </div>
+            </div>
+
+            <div class="foveal-map-container">
+                <svg class="foveal-svg" viewBox="0 0 600 140" width="100%" height="140">
+                    <rect x="10" y="10" width="580" height="120" rx="4" fill="#121215" stroke="#27272a" stroke-width="1"/>
+                    <circle cx="300" cy="70" r="55" fill="rgba(161, 161, 170, 0.05)" stroke="#3f3f46" stroke-dasharray="4"/>
+                    <text x="300" y="28" font-family="monospace" font-size="10" fill="#a1a1aa" text-anchor="middle">PERIPHERAL VISUAL ACCESS (RETINAL EXPOSURE)</text>
+                    <circle cx="300" cy="70" r="24" fill="rgba(198, 162, 39, 0.15)" stroke="#c6a227" stroke-width="2"/>
+                    <circle cx="300" cy="70" r="4" fill="#c6a227"/>
+                    <text x="300" y="74" font-family="monospace" font-size="10" font-weight="bold" fill="#f4f4f5" text-anchor="middle">FOVEAL FOCUS</text>
+                </svg>
+            </div>
+        </article>
+
+        <!-- RULE 004 -->
+        <article class="rule-card" id="rule-004">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 004</span>
+                <span class="status-pill">Cognitive Friction</span>
+            </div>
+            <h3 class="rule-title">Ability to Read Is Not the Same as Cognitive Efficiency</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Being capable of deciphering bad document layout does not mean the reading condition is cognitively efficient.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">Cognitive Friction (formatting clutter) steals working memory capacity needed for subject analysis.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Eliminate extraneous document formatting clutter so mental effort is spent entirely on understanding.</p>
+                </div>
+            </div>
+
+            <div class="energy-bar-container">
+                <div class="pipeline-header">Working Memory Capacity Allocation</div>
+                <div class="energy-bar">
+                    <div class="energy-segment--intrinsic" title="Subject Analysis (45%)"></div>
+                    <div class="energy-segment--friction" title="Cognitive Friction (35%)"></div>
+                    <div class="energy-segment--capacity" title="Available Capacity (20%)"></div>
+                </div>
+                <div class="energy-legend">
+                    <span><span class="legend-dot" style="background: var(--accent-gold);"></span> Subject Analysis (45%)</span>
+                    <span><span class="legend-dot" style="background: #eab308;"></span> Cognitive Friction (35%)</span>
+                    <span><span class="legend-dot" style="background: #27272a;"></span> Free Capacity (20%)</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- RULE 005 -->
+        <article class="rule-card" id="rule-005">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 005</span>
+                <span class="status-pill">Pre-Reading Prep</span>
+            </div>
+            <h3 class="rule-title">Establish the Reading Environment Before Processing</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Configure display scaling, contrast, lighting, and viewing distance before your eyes touch the text.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">Starting a dense reading session with poor zoom or bad lighting creates immediate visual strain.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Follow a 3-step pre-reading desk checklist before reviewing critical corporate disclosures.</p>
+                </div>
+            </div>
+
+            <div class="checklist-grid">
+                <div class="check-item"><span>[✓]</span><span>Enlarge text display scaling (125%–150%+)</span></div>
+                <div class="check-item"><span>[✓]</span><span>Maintain ~3ft comfortable viewing distance</span></div>
+                <div class="check-item"><span>[✓]</span><span>Adjust contrast to eliminate glare</span></div>
+            </div>
+        </article>
+
+        <!-- RULE 006 -->
+        <article class="rule-card" id="rule-006">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 006</span>
+                <span class="status-pill">Medium Strategy</span>
+            </div>
+            <h3 class="rule-title">Adapt and Experiment With the Reading Environment</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Different document densities require dynamic switching between digital screens and physical printouts.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">Reading 500-page disclosures on digital screens causes scrolling friction (Screen Inferiority Effect).</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Use digital screens for rapid keyword search; print high-density disclosures to preserve spatial topology.</p>
+                </div>
+            </div>
+
+            <div class="medium-matrix-grid">
+                <div class="medium-box">
+                    <div class="client-qa-label">Digital Screen</div>
+                    <p style="font-size: 0.84375rem; color: var(--text-secondary); margin: 0;">Optimal for rapid search, keyword extraction, and automated sentiment screening.</p>
+                </div>
+                <div class="medium-box">
+                    <div class="client-qa-label" style="color: var(--accent-gold);">Physical Print</div>
+                    <p style="font-size: 0.84375rem; color: var(--text-secondary); margin: 0;">Essential for multi-document spatial cross-referencing and deep synthesis.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- RULE 007 -->
+        <article class="rule-card" id="rule-007">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 007</span>
+                <span class="status-pill">Task-Oriented Path</span>
+            </div>
+            <h3 class="rule-title">Read to Understand, Not Simply to Finish</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Your required professional output dictates your reading pathway; linear reading is an optional choice.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">Reading linearly from page 1 to the end out of habit wastes hours on irrelevant boilerplate text.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Define the precise output of your reading session before opening the document.</p>
+                </div>
+            </div>
+
+            <div class="tree-grid">
+                <div class="tree-branch">
+                    <div class="tree-task">Contract Liability Audit</div>
+                    <div class="tree-path">Targeted Keyword Scanning $\rightarrow$ Spatial Filtering $\rightarrow$ Clause Cross-Referencing</div>
+                </div>
+                <div class="tree-branch">
+                    <div class="tree-task">Technical Methodology</div>
+                    <div class="tree-path">Sequential Schema Construction $\rightarrow$ Formula Isolation $\rightarrow$ Mathematical Verification</div>
+                </div>
+                <div class="tree-branch">
+                    <div class="tree-task">Executive Synthesis</div>
+                    <div class="tree-path">Macro Structural Audit $\rightarrow$ Key Metric Extraction $\rightarrow$ Footnote Verification</div>
+                </div>
+            </div>
+        </article>
+
+        <!-- RULE 008 -->
+        <article class="rule-card" id="rule-008">
+            <div class="rule-header-strip">
+                <span class="rule-badge">RULE 008</span>
+                <span class="status-pill">Apex Standard</span>
+            </div>
+            <h3 class="rule-title">The Professional Reading Standard</h3>
+            
+            <div class="client-qa-grid">
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What This Means For You</div>
+                    <p class="client-qa-val">Elevates document reading from passive word-consumption to active metacognitive resource management.</p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">Why It Matters</div>
+                    <p class="client-qa-val">Ordinary readers ask <em>“Did I finish?”</em> Professional readers ask <em>“Did I build an accurate mental model?”</em></p>
+                </div>
+                <div class="client-qa-box">
+                    <div class="client-qa-label">What You Can Do</div>
+                    <p class="client-qa-val">Adopt the Chef Mindset: actively dictate reading conditions to ensure flawless decision execution.</p>
+                </div>
+            </div>
+
+            <div class="contrast-matrix">
+                <div class="matrix-card-inner">
+                    <div class="client-qa-label">Home Cook Mindset</div>
+                    <div class="matrix-quote">“Did I finish reading all the pages?”</div>
+                    <p style="font-size: 0.84375rem; color: var(--text-secondary); margin: 0;">Ordinary passive reading regardless of cognitive strain.</p>
+                </div>
+                <div class="matrix-card-inner matrix-card-inner--pro">
+                    <div class="client-qa-label" style="color: var(--accent-gold);">Professional Chef Mindset</div>
+                    <div class="matrix-quote">“Did I construct an accurate mental model?”</div>
+                    <p style="font-size: 0.84375rem; color: var(--text-secondary); margin: 0;">Active management of cognitive energy and visual environment.</p>
+                </div>
+            </div>
+        </article>
+
+    </section>
+
+    <!-- ==========================================================================
+       PART 04 — SCOPE & SERVICE BOUNDARY
+       ========================================================================== -->
+    <section id="part-04" class="part-section">
+        <span class="part-tag">PART 04</span>
+        <h2 class="part-heading">Framework Scope &amp; Professional Service Execution</h2>
+
+        <div class="callout-box callout-box--limitation">
+            <div class="callout-title">Framework Scope &amp; Educational Boundary</div>
+            <div class="callout-text">
+                This framework is an educational model of cognitive ergonomics. It is <strong>not</strong> a medical, clinical, or psychological diagnostic tool, nor does it assess or treat individual neurological conditions. Applying these principles does not guarantee complete comprehension or zero fatigue. Mental friction during complex document review is not a personal cognitive defect; it is the natural biological outcome of exposing limited working memory to unstructured data.
+            </div>
+        </div>
+
+        <div class="service-boundary-card">
+            <div class="boundary-panel">
+                <div class="client-qa-label">Self-Application</div>
+                <div style="font-family: Georgia, serif; font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.5rem;">Educational Framework</div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin: 0;">
+                    Teaches cognitive ergonomics principles so you can optimize your reading conditions and desk setup independently.
+                </p>
+            </div>
+            <div class="boundary-panel boundary-panel--service">
+                <div class="client-qa-label" style="color: var(--accent-gold);">Operational Execution</div>
+                <div style="font-family: Georgia, serif; font-size: 1.15rem; color: var(--text-primary); margin-bottom: 0.5rem;">Paid Professional Service</div>
+                <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1rem;">
+                    Audits, restructures, and formats 500-page corporate disclosures on your behalf, actively removing extraneous cognitive friction before documents hit your desk.
+                </p>
+                <a href="/contact/cirf/" class="gateway-btn" style="margin-top: 0.5rem;">
+                    <span>Discuss CIRF for Your Organization</span>
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    document.querySelectorAll('.pipeline-node').forEach(function(node) {
+        node.addEventListener('click', function() {
+            document.querySelectorAll('.pipeline-node').forEach(function(n) { n.classList.remove('active'); });
+            this.classList.add('active');
+            var desc = this.getAttribute('data-desc');
+            document.getElementById('pipeline-tooltip').innerText = desc;
+        });
+    });
+</script>
+{% endblock %}

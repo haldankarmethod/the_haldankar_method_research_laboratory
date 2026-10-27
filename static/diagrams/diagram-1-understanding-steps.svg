@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="100%" height="100%" role="img" aria-labelledby="d1-title d1-desc">
+    <title id="d1-title">The Understanding Steps: 5-Stage Situational Awareness Progression</title>
+    <desc id="d1-desc">Sequential flow mapping how market participants perceive data, comprehend relationships, project trajectories, evaluate risk hurdles, and execute capital commitment.</desc>
+    
+    <defs>
+        <style>
+            .bg { fill: #09090b; stroke: #27272a; stroke-width: 1; }
+            .bg-active { fill: #09090b; stroke: #c6a227; stroke-width: 1.5; }
+            .num { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; fill: #c6a227; }
+            .title { font-family: 'Playfair Display', serif; font-size: 14px; font-weight: 600; fill: #f4f4f5; }
+            .desc { font-family: 'Inter', sans-serif; font-size: 10px; fill: #a1a1aa; }
+            .arrow { stroke: #27272a; stroke-width: 1.5; fill: none; }
+            .arrow-head { fill: #c6a227; }
+        </style>
+    </defs>
+
+    <!-- Node 1: Perceive -->
+    <g transform="translate(10, 20)">
+        <rect class="bg" width="140" height="140" rx="2"/>
+        <text x="12" y="28" class="num">01 // STAGE</text>
+        <text x="12" y="54" class="title">Perceive</text>
+        <text x="12" y="80" class="desc">Raw visual signals</text>
+        <text x="12" y="96" class="desc">and price ticks</text>
+        <text x="12" y="112" class="desc">enter sensory buffer</text>
+    </g>
+
+    <!-- Arrow 1-2 -->
+    <path d="M 155 90 L 168 90" class="arrow"/>
+    <polygon points="168,87 174,90 168,93" class="arrow-head"/>
+
+    <!-- Node 2: Comprehend -->
+    <g transform="translate(170, 20)">
+        <rect class="bg" width="140" height="140" rx="2"/>
+        <text x="12" y="28" class="num">02 // STAGE</text>
+        <text x="12" y="54" class="title">Comprehend</text>
+        <text x="12" y="80" class="desc">Syntax resolution;</text>
+        <text x="12" y="96" class="desc">converting metrics</text>
+        <text x="12" y="112" class="desc">into mental models</text>
+    </g>
+
+    <!-- Arrow 2-3 -->
+    <path d="M 315 90 L 328 90" class="arrow"/>
+    <polygon points="328,87 334,90 328,93" class="arrow-head"/>
+
+    <!-- Node 3: Project -->
+    <g transform="translate(330, 20)">
+        <rect class="bg" width="140" height="140" rx="2"/>
+        <text x="12" y="28" class="num">03 // STAGE</text>
+        <text x="12" y="54" class="title">Project</text>
+        <text x="12" y="80" class="desc">Forward trajectory</text>
+        <text x="12" y="96" class="desc">and volatility</text>
+        <text x="12" y="112" class="desc">scenario mapping</text>
+    </g>
+
+    <!-- Arrow 3-4 -->
+    <path d="M 475 90 L 488 90" class="arrow"/>
+    <polygon points="488,87 494,90 488,93" class="arrow-head"/>
+
+    <!-- Node 4: Evaluate -->
+    <g transform="translate(490, 20)">
+        <rect class="bg" width="140" height="140" rx="2"/>
+        <text x="12" y="28" class="num">04 // STAGE</text>
+        <text x="12" y="54" class="title">Evaluate</text>
+        <text x="12" y="80" class="desc">Stress-testing risk</text>
+        <text x="12" y="96" class="desc">hurdles &amp; loss</text>
+        <text x="12" y="112" class="desc">boundaries</text>
+    </g>
+
+    <!-- Arrow 4-5 -->
+    <path d="M 635 90 L 648 90" class="arrow"/>
+    <polygon points="648,87 654,90 648,93" class="arrow-head"/>
+
+    <!-- Node 5: Execute -->
+    <g transform="translate(650, 20)">
+        <rect class="bg-active" width="140" height="140" rx="2"/>
+        <text x="12" y="28" class="num">05 // FINAL</text>
+        <text x="12" y="54" class="title" style="fill: #c6a227;">Execute</text>
+        <text x="12" y="80" class="desc" style="fill: #f4f4f5;">Capital commitment</text>
+        <text x="12" y="96" class="desc" style="fill: #f4f4f5;">with verified</text>
+        <text x="12" y="112" class="desc" style="fill: #f4f4f5;">decision integrity</text>
+    </g>
+</svg>

@@ -1,0 +1,193 @@
+/* ==========================================================================
+   HDFC BANK CONTROLLED EXPERIMENT — EMPIRICAL EVIDENCE STYLESHEET
+   ========================================================================== */
+
+@import url('/static/css/research-tokens.css');
+
+/* Scientific Method Progression Strip */
+.scientific-method-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 0.75rem 1rem;
+    margin: var(--space-6) 0;
+}
+
+.method-node {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+}
+
+.method-node--active {
+    background: var(--accent-gold-subtle);
+    color: var(--accent-gold);
+    border: 1px solid var(--accent-gold-border);
+}
+
+.method-arrow {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* Side-by-Side Comparison Matrices */
+.matrix-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+    margin: var(--space-6) 0;
+}
+
+@media (max-width: 860px) {
+    .matrix-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.matrix-col {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.matrix-col--baseline {
+    border-top: 3px solid var(--text-muted);
+}
+
+.matrix-col--conditioned {
+    border-top: 3px solid var(--accent-gold);
+    background: rgba(9, 9, 11, 0.95);
+}
+
+.matrix-col__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.matrix-col__title {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.matrix-col--baseline .matrix-col__title {
+    color: var(--text-muted);
+}
+
+.matrix-col--conditioned .matrix-col__title {
+    color: var(--accent-gold);
+}
+
+.matrix-col__body p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.matrix-col__body strong {
+    color: var(--text-primary);
+}
+
+/* Decision-Blocking Unknowns Block */
+.unknowns-callout {
+    background: var(--warning-bg);
+    border: 1px solid var(--warning-border);
+    border-left: 3px solid var(--warning-crimson);
+    border-radius: 2px;
+    padding: 1rem 1.25rem;
+    margin-top: var(--space-4);
+}
+
+.unknowns-callout__title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #f87171;
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.unknowns-callout__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8125rem;
+    color: #fca5a5;
+    line-height: 1.5;
+}
+
+.unknowns-callout__list li {
+    margin-bottom: 0.25rem;
+    display: flex;
+    gap: 0.4rem;
+}
+
+.unknowns-callout__list li::before {
+    content: "•";
+    color: var(--warning-crimson);
+    font-weight: bold;
+}
+
+/* Mandate Selector Tab Bar */
+.mandate-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: var(--space-6) 0 var(--space-4);
+}
+
+.mandate-tab-btn {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.85rem;
+    background: var(--bg-surface);
+    color: var(--text-muted);
+    border: 1px solid var(--border-subtle);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.mandate-tab-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--border-strong);
+}
+
+.mandate-tab-btn.is-active {
+    background: var(--accent-gold-subtle);
+    color: var(--accent-gold);
+    border-color: var(--accent-gold-border);
+}
+
+.mandate-panel {
+    display: none;
+}
+
+.mandate-panel.is-active {
+    display: block;
+}

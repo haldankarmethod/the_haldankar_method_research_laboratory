@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%" role="img" aria-labelledby="d4-title d4-desc">
+    <title id="d4-title">The Two-Layer Context Architecture (Upstream DCM &amp; Downstream Presentation)</title>
+    <desc id="d4-desc">Visual separation between Upstream Epistemic Governance (Decision Context Models) and Downstream Cognitive Communication (Actual Profit Human Interface).</desc>
+    
+    <defs>
+        <style>
+            .card-up { fill: #0c0a09; stroke: #c6a227; stroke-width: 1.5; }
+            .card-down { fill: #080d1a; stroke: #3b82f6; stroke-width: 1.5; }
+            .t-mono { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; }
+            .t-h { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 600; fill: #f4f4f5; }
+            .t-b { font-family: 'Inter', sans-serif; font-size: 11px; fill: #d4d4d8; line-height: 1.5; }
+            .conn-line { stroke: #27272a; stroke-width: 1.5; stroke-dasharray: 4,4; }
+        </style>
+    </defs>
+
+    <!-- Upstream Box: Decision Context Models -->
+    <g transform="translate(30, 20)">
+        <rect class="card-up" width="350" height="200" rx="2"/>
+        <text x="16" y="26" class="t-mono" style="fill: #c6a227;">LAYER 01 · UPSTREAM EPISTEMIC GOVERNANCE</text>
+        <text x="16" y="50" class="t-h">Decision Context Models (DCM)</text>
+        <text x="16" y="75" class="t-b">• Defines Institutional Decision Mandate (A/B/C/D)</text>
+        <text x="16" y="95" class="t-b">• Enforces Loss Hurdles &amp; Time Horizon Limits</text>
+        <text x="16" y="115" class="t-b">• Flags Decision-Blocking Unknowns in Crimson</text>
+        <text x="16" y="135" class="t-b">• Prevents Silent Statistical Pattern Insertion</text>
+        <text x="16" y="165" class="t-mono" style="fill: #a1a1aa;">AUDIT STANDARD: US FED SR 26-2 / SEBI</text>
+    </g>
+
+    <!-- Center Connection Arrow -->
+    <path d="M 385 120 L 415 120" stroke="#c6a227" stroke-width="2"/>
+    <polygon points="415,116 422,120 415,124" fill="#c6a227"/>
+
+    <!-- Downstream Box: Actual Profit Cognitive Interface -->
+    <g transform="translate(420, 20)">
+        <rect class="card-down" width="350" height="200" rx="2"/>
+        <text x="16" y="26" class="t-mono" style="fill: #60a5fa;">LAYER 02 · DOWNSTREAM COGNITIVE INTERFACE</text>
+        <text x="16" y="50" class="t-h">Actual Profit Presentation</text>
+        <text x="16" y="75" class="t-b">• Scaffolds Verified Machine Output for Humans</text>
+        <text x="16" y="95" class="t-b">• Respects 4-Chunk Working Memory Capacity</text>
+        <text x="16" y="115" class="t-b">• Eliminates Y-Axis Perceptual Slope Bias</text>
+        <text x="16" y="135" class="t-b">• Implements White Paper Test Legibility</text>
+        <text x="16" y="165" class="t-mono" style="fill: #a1a1aa;">TARGET: ZERO COGNITIVE LATENCY (C_loss = 0)</text>
+    </g>
+</svg>

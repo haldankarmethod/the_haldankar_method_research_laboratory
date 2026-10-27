@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main_classes %}monograph-shell{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/research/actual_profit/series.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/research/actual_profit/series.js' %}"></script>
+{% endblock %}
+
+{% block nav_contextual_actions %}
+<button type="button" class="header-btn" data-action="open-toc" aria-label="Monograph Contents">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    <span>Contents</span>
+</button>
+{% endblock %}
+
+{% block pre_main %}
+<!-- Table of Contents Slide-Out Drawer (Mobile) -->
+<div class="toc-overlay" id="tocOverlay" aria-hidden="true"></div>
+<aside class="toc-drawer" id="tocDrawer" aria-label="Monograph Navigation Drawer">
+    <div class="toc-drawer__header">
+        <span class="toc-drawer__title">Actual Profit Monograph</span>
+        <button type="button" class="toc-drawer__close" id="tocCloseBtn" aria-label="Close Table of Contents">&times;</button>
+    </div>
+    <div class="toc-drawer__body">
+        <ul class="toc-nav-list">
+            <li class="toc-nav-item {% if monograph_active == 'index' %}is-current{% endif %}">
+                <a href="/research/actual-profit/">
+                    <span class="toc-nav-num">00</span>
+                    <span>Series Hub & Overview</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_01' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-01-system-architecture/">
+                    <span class="toc-nav-num">01</span>
+                    <span>System Architecture — The Understanding Steps</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_02' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-02-human-processor/">
+                    <span class="toc-nav-num">02</span>
+                    <span>Biological Constraint — The Human Processor</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_03' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-03-screen/">
+                    <span class="toc-nav-num">03</span>
+                    <span>The Screen Chapter — Perceptual Competition</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_04' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-04-white-paper-test/">
+                    <span class="toc-nav-num">04</span>
+                    <span>White Paper Test Theory</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_05' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-05-applied-case-studies/">
+                    <span class="toc-nav-num">05</span>
+                    <span>Applied Case Studies — Decoding Friction & Y-Axis</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_06' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-06-decision-integrity/">
+                    <span class="toc-nav-num">06</span>
+                    <span>Chaos & Breakdown of Decision Integrity</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_07' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-07-dimensionality/">
+                    <span class="toc-nav-num">07</span>
+                    <span>The Curse of Dimensionality in Trading</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_08' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-08-advanced-algorithm/">
+                    <span class="toc-nav-num">08</span>
+                    <span>The Myth of the Advanced Algorithm</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'chapter_09' %}is-current{% endif %}">
+                <a href="/research/actual-profit/chapter-09-closing-perspective/">
+                    <span class="toc-nav-num">09</span>
+                    <span>A Small Message from the Author</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'who_should_read' %}is-current{% endif %}">
+                <a href="/research/actual-profit/who-should-read/">
+                    <span class="toc-nav-num">—</span>
+                    <span>Who Should Read This Monograph</span>
+                </a>
+            </li>
+            <li class="toc-nav-item {% if monograph_active == 'legal_notice' %}is-current{% endif %}">
+                <a href="/research/actual-profit/legal-notice/">
+                    <span class="toc-nav-num">—</span>
+                    <span>Legal Notice & Disclaimers</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+{% endblock %}
+
+{% block content %}
+<!-- Sticky Left Desktop Sidebar -->
+<aside class="toc-sidebar" aria-label="Chapter Table of Contents">
+    <div class="toc-sidebar__title">
+        <span>Chapter Index</span>
+        <span style="color: var(--accent-gold);">12 Parts</span>
+    </div>
+    <ul class="toc-sidebar__list">
+        <li class="toc-sidebar__item {% if monograph_active == 'index' %}is-active{% endif %}">
+            <a href="/research/actual-profit/">
+                <span class="toc-sidebar__num">00</span>
+                <span>Series Hub & Overview</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_01' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-01-system-architecture/">
+                <span class="toc-sidebar__num">01</span>
+                <span>System Architecture — The Understanding Steps</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_02' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-02-human-processor/">
+                <span class="toc-sidebar__num">02</span>
+                <span>Biological Constraint — The Human Processor</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_03' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-03-screen/">
+                <span class="toc-sidebar__num">03</span>
+                <span>The Screen Chapter — Perceptual Competition</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_04' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-04-white-paper-test/">
+                <span class="toc-sidebar__num">04</span>
+                <span>White Paper Test Theory</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_05' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-05-applied-case-studies/">
+                <span class="toc-sidebar__num">05</span>
+                <span>Applied Case Studies — Decoding Friction & Y-Axis</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_06' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-06-decision-integrity/">
+                <span class="toc-sidebar__num">06</span>
+                <span>Chaos & Breakdown of Decision Integrity</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_07' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-07-dimensionality/">
+                <span class="toc-sidebar__num">07</span>
+                <span>The Curse of Dimensionality in Trading</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_08' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-08-advanced-algorithm/">
+                <span class="toc-sidebar__num">08</span>
+                <span>The Myth of the Advanced Algorithm</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'chapter_09' %}is-active{% endif %}">
+            <a href="/research/actual-profit/chapter-09-closing-perspective/">
+                <span class="toc-sidebar__num">09</span>
+                <span>A Small Message from the Author</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'who_should_read' %}is-active{% endif %}">
+            <a href="/research/actual-profit/who-should-read/">
+                <span class="toc-sidebar__num">—</span>
+                <span>Who Should Read This Monograph</span>
+            </a>
+        </li>
+        <li class="toc-sidebar__item {% if monograph_active == 'legal_notice' %}is-active{% endif %}">
+            <a href="/research/actual-profit/legal-notice/">
+                <span class="toc-sidebar__num">—</span>
+                <span>Legal Notice & Disclaimers</span>
+            </a>
+        </li>
+    </ul>
+</aside>
+
+<!-- Central Reading Column -->
+<article class="monograph-reading-body monograph-content">
+    {% block monograph_content %}{% endblock %}
+</article>
+{% endblock %}

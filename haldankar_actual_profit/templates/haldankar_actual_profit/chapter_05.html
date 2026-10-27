@@ -1,0 +1,231 @@
+{% extends 'haldankar_actual_profit/base_monograph.html' %}
+{% load static %}
+
+{% block title %}Applied Case Studies & Y-Axis Distortion — Actual Profit Monograph | The Haldankar Method{% endblock %}
+{% block description %}Applied Case Studies & Y-Axis Distortion: Deconstructing Execution Slippage and Visual Slope Bias. Authored by Suraj Rohit Haldankar.{% endblock %}
+
+{% block monograph_active %}chapter_05{% endblock %}
+
+{% block monograph_content %}
+<header class="monograph-header">
+                <div class="monograph-chapter-tag">CHAPTER 05 · EMPIRICAL STUDIES</div>
+                <h1 class="monograph-title">Applied Case Studies & Y-Axis Distortion</h1>
+                <div class="monograph-subtitle">Deconstructing Execution Slippage and Visual Slope Bias</div>
+                <div class="monograph-meta-bar">
+                    <span>Author: <strong>Suraj Rohit Haldankar</strong></span>
+                    <span>ORCID: <a href="https://orcid.org/0009-0000-9372-059X" target="_blank" rel="noopener noreferrer" class="link-inline">0009-0000-9372-059X ↗</a></span>
+                    <span>Format: <strong>Digital Monograph</strong></span>
+                </div>
+            </header>
+
+            <!-- 1. Chapter Identity & Orientation -->
+            
+
+            <!-- 2. Section 1: The Cost of Unstructured Data -->
+            <h2>The Cost of Unstructured Data</h2>
+            <p>
+                Financial information systems are heavily engineered for machine processing — but the final interpreter is biological. This creates a foundational mismatch: <mark class="mono-verdict">the format is optimized for data transmission, not human perception</mark>.
+            </p>
+            <p>
+                Raw financial disclosures place the burden of organization on the reader. Before analysis can begin, the brain must impose structure on unformatted data, consuming finite working memory resources. When data is engineered around cognitive design principles, that preliminary friction disappears:
+            </p>
+
+            <div class="principles-list">
+                <div class="principles-item">
+                    <span class="principles-item__num">01</span>
+                    <div>
+                        <div class="principles-item__title">Information Segmentation</div>
+                        <p class="principles-item__desc">Resolves one concept before demanding attention for the next, preventing simultaneous cognitive interference.</p>
+                    </div>
+                </div>
+                <div class="principles-item">
+                    <span class="principles-item__num">02</span>
+                    <div>
+                        <div class="principles-item__title">Visual Hierarchy</div>
+                        <p class="principles-item__desc">Guides the eye effortlessly across core metrics without requiring active visual navigation decisions.</p>
+                    </div>
+                </div>
+                <div class="principles-item">
+                    <span class="principles-item__num">03</span>
+                    <div>
+                        <div class="principles-item__title">Immediate Distinguishability</div>
+                        <p class="principles-item__desc">Separates critical valuation and risk metrics instantly from supporting secondary detail.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 0.9375rem; color: var(--text-secondary);">
+                <em>Where Chapter 04 established the theory of Presentation Resistance, this chapter demonstrates how that resistance operates in live visual chart environments.</em>
+            </p>
+
+            <!-- 3. Section 2: The Biology of Visual Dominance (V1 Cortex) -->
+            <h2>The Biology of Visual Dominance</h2>
+            <p>
+                The human brain did not evolve as a mathematical calculator. It evolved to navigate physical space and detect patterns. When viewing a candlestick chart, the brain does not start by reading price labels on the Y-axis. It begins by processing visual geometry.
+            </p>
+            <p>
+                The <strong class="mono-term">primary visual cortex (V1)</strong> processes the geometric slope, vertical height, and spatial relationship of each candle before executive System 2 evaluates a single price label (Kosslyn, 2006; Ware, 2012). Because geometry precedes arithmetic, <mark class="mono-verdict">the shape of the chart is the information to the brain's analytical core</mark>.
+            </p>
+
+            <h3>The Colavita Effect in Financial Displays</h3>
+            <p>
+                The phenomenon of <strong class="mono-term">Visual Dominance</strong> (Colavita, 1974; Spence, 2009) establishes that when sensory modalities or visual-versus-numerical cues conflict, the human brain instinctively resolves the conflict in favor of visual geometry.
+            </p>
+
+            <blockquote>
+                “When visual and numerical information conflict — as in a distorted Y-axis — the brain instinctively trusts the visual representation. This is a manifestation of the 'Colavita Effect,' where visual stimuli seize attentional resources more effectively than other data types.”
+                <cite>— Colavita (1974); Spence (2009)</cite>
+            </blockquote>
+
+            <!-- 4. Section 3: The Y-Axis Problem & Perceptual Mismatches -->
+            <h2>The Y-Axis Problem &amp; Cognitive Miscalibration</h2>
+            <p>
+                Standard charting platforms employ dynamic auto-scaling by default. As price fluctuates, the Y-axis expands and contracts automatically.
+            </p>
+            <p>
+                This dynamic rescaling creates severe <strong class="mono-term">Perceptual Mismatches</strong>: a <strong>0.5% minor price tick</strong> occupies the exact same vertical screen height as a <strong>5.0% macroeconomic breakout</strong> did minutes earlier.
+            </p>
+
+            <!-- Interactive Y-Axis Comparison Widget (Roadmap Part 9 & 23) -->
+            <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.5rem; margin: var(--space-6) 0;">
+                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <span class="research-tag research-tag--gold">INTERACTIVE DEMONSTRATION</span>
+                        <h4 style="color: var(--text-primary); margin: 0.25rem 0 0 0;">Y-Axis Geometric Scaling Comparison</h4>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button type="button" class="btn btn-secondary btn-sm btn-gold" data-yaxis-scale="dynamic">Auto-Scaled (Dynamic)</button>
+                        <button type="button" class="btn btn-secondary btn-sm" data-yaxis-scale="isometric">Fixed Proportional (Isometric)</button>
+                    </div>
+                </div>
+
+                <div id="yaxis-preview-box" data-mode="dynamic" style="background: var(--bg-primary); border: 1px solid var(--border-subtle); border-radius: 2px; padding: 1.5rem; min-height: 140px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+                    <div id="yaxis-scale-label" style="font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent-gold); margin-bottom: 0.75rem;">
+                        Auto-Scaled Y-Axis: 0.5% move rendered with 45° slope exaggeration (Induces False Breakout Heuristic)
+                    </div>
+                    <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">
+                        Visual suggestion forces V1 cortex to overestimate volatility by 10x.
+                    </div>
+                </div>
+            </div>
+
+            <div class="distortion-compare-box">
+                <div class="research-card__label">Diagnostic Comparison</div>
+                <h3 style="margin-top: 0.25rem; font-family: var(--font-serif);">Dynamic Auto-Scaling vs. Fixed-Ratio Visual Logic</h3>
+                <div class="compare-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div class="compare-item compare-item--problem" style="background: var(--bg-surface); border: 1px solid rgba(153, 27, 27, 0.4); border-left: 3px solid var(--warning-crimson); padding: 1rem;">
+                        <div class="compare-item__title" style="font-family: var(--font-mono); font-size: 0.75rem; color: #f87171; font-weight: 700; margin-bottom: 0.5rem;">Default Dynamic Auto-Scaling (Problem)</div>
+                        <p class="compare-item__text" style="font-size: 0.8125rem; color: var(--text-secondary); margin: 0; line-height: 1.5;">
+                            Y-axis dynamically stretches noise. A 0.5% fluctuation spans the full vertical screen height, triggering identical System 1 urgency and hormonal arousal as a 5.0% move. Generates <strong class="mono-term">Visual Suggestion Errors</strong>.
+                        </p>
+                    </div>
+                    <div class="compare-item compare-item--solution" style="background: var(--bg-surface); border: 1px solid rgba(6, 78, 59, 0.5); border-left: 3px solid var(--success-green); padding: 1rem;">
+                        <div class="compare-item__title" style="font-family: var(--font-mono); font-size: 0.75rem; color: #34d399; font-weight: 700; margin-bottom: 0.5rem;">Fixed-Ratio Visual Logic (Solution)</div>
+                        <p class="compare-item__text" style="font-size: 0.8125rem; color: var(--text-secondary); margin: 0; line-height: 1.5;">
+                            Y-axis scale is locked and synchronized across multiple timeframes (1m, 1h, 1d). Slope and candlestick height directly reflect mathematical rate of change, restoring true geometric proportion to the brain's V1 cortex.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                According to <strong class="mono-term">Teghtsoonian's</strong> (1971) range-frequency principle, human magnitude estimates shift in response to the presented visual range. The trader's brain responds rationally to the geometry it sees. The error is not cognitive incompetence: <mark class="mono-verdict">it is environmental distortion</mark>.
+            </p>
+
+            <!-- 5. Section 4: Visual Suggestion Error & The 0.1% Loss Formulation -->
+            <h2>Visual Suggestion Error & The 0.1% Integrity Loss</h2>
+            <p>
+                Repeated Perceptual Mismatches generate what this research defines as <strong class="mono-term">Visual Suggestion Errors</strong>: decision errors where heuristic reactions are triggered by the visual suggestion of significance rather than mathematical reality (Kahneman, 2011).
+            </p>
+
+            <div class="research-card research-card--gold">
+                <div class="research-card__header">
+                    <span class="research-card__label">Proprietary Formulation</span>
+                    <span class="research-card__badge">The 0.1% Integrity Loss</span>
+                </div>
+                <div class="research-card__content">
+                    <p>
+                        <strong class="mono-verdict-core">The 0.1% Integrity Loss is the cumulative margin of decision error attributable to Visual Suggestion Errors produced by Y-axis scale distortion.</strong>
+                    </p>
+                    <p style="margin-top: 0.5rem;">
+                        It is not a single catastrophic breakdown. It is the statistical accumulation of minor misjudgments resolved in favor of distorted geometry under cognitive load.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6. Section 5: The Structural Solution: The Garud Algorithm -->
+            <h2>The Structural Solution: The Garud Algorithm</h2>
+            <p>
+                Because the Colavita Effect operates below conscious awareness, trader discipline cannot prevent the brain from reacting to misleading slopes. The intervention must be algorithmic and structural.
+            </p>
+            <p>
+                <strong class="mono-term">The Garud Algorithm</strong> (Haldankar, 2024) implements two structural safeguards:
+            </p>
+
+            <div class="garud-safeguards-grid">
+                <div class="garud-card">
+                    <div class="garud-card__num">Safeguard 01</div>
+                    <div class="garud-card__title">Fixed-Ratio Visual Logic</div>
+                    <p class="garud-card__desc">
+                        Locks the Y-axis scale across multiple timeframes (1m, 1h, 1d) on a single synchronized scale, preventing charting platforms from dynamically exaggerating or flattening slope geometry.
+                    </p>
+                </div>
+                <div class="garud-card">
+                    <div class="garud-card__num">Safeguard 02</div>
+                    <div class="garud-card__title">Information Isolation</div>
+                    <p class="garud-card__desc">
+                        Enables practitioners to disable irrelevant indicator layers and inspect isolated time segments (e.g., first 15m vs last 15m), adhering strictly to Cowan's (2001) 4-chunk working memory limit.
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                The algorithm does not generate trades or trading signals. <mark class="mono-verdict">It acts as a Perceptual Governor</mark> — ensuring that the geometry the brain sees matches the mathematical reality the institution requires.
+            </p>
+
+            <!-- 7. Academic References -->
+            <section class="references-section">
+                <h3 class="references-heading">Chapter References & Sources</h3>
+                <ul class="references-list">
+                    <li>Colavita, F. B. (1974). Human sensory dominance. <em>Perception & Psychophysics</em>, 16(2), 409–412.</li>
+                    <li>Cowan, N. (2001). The magical number 4 in short-term memory: A reconsideration of mental storage capacity. <em>Behavioral and Brain Sciences</em>, 24(1), 87–114.</li>
+                    <li>Haldankar, S. R. (2024). <em>The Haldankar Method: Engineering Thought & Experience</em>. Haldankar Editions.</li>
+                    <li>Kahneman, D. (2011). <em>Thinking, Fast and Slow</em>. Farrar, Straus and Giroux.</li>
+                    <li>Kosslyn, S. M. (2006). <em>Graph Design for the Eye and Mind</em>. Oxford University Press.</li>
+                    <li>Spence, C. (2009). Explaining the Colavita visual dominance effect. <em>Progress in Brain Research</em>, 176, 245–258.</li>
+                    <li>Teghtsoonian, R. (1971). On the exponents in Stevens' law and the constant product of range and exponent. <em>Psychological Review</em>, 78(1), 71–80.</li>
+                    <li>Ware, C. (2012). <em>Information Visualization: Perception for Design</em> (3rd ed.). Elsevier.</li>
+                </ul>
+            </section>
+
+            <!-- Chapter Navigation -->
+            <nav class="chapter-nav-grid" aria-label="Chapter Navigation">
+                <a href="/research/actual-profit/chapter-04-white-paper-test/" class="chapter-nav-card">
+                    <span class="chapter-nav-card__direction">← Previous Chapter</span>
+                    <span class="chapter-nav-card__title">Chapter 04: White Paper Test Theory</span>
+                </a>
+                <a href="/research/actual-profit/chapter-06-decision-integrity/" class="chapter-nav-card chapter-nav-card--next">
+                    <span class="chapter-nav-card__direction">Next Chapter →</span>
+                    <span class="chapter-nav-card__title">Chapter 06: Chaos & Breakdown of Decision Integrity</span>
+                </a>
+            </nav>
+
+            
+    <nav class="monograph-pagination" aria-label="Chapter Navigation">
+        <a href="/research/actual-profit/chapter-04-white-paper-test/" class="pagination-btn">
+            <span class="pagination-btn__dir">&larr; Previous</span>
+            <span class="pagination-btn__title">Chapter 04: White Paper Test Theory</span>
+        </a>
+        <a href="/research/actual-profit/chapter-06-decision-integrity/" class="pagination-btn is-next">
+            <span class="pagination-btn__dir">Next &rarr;</span>
+            <span class="pagination-btn__title">Chapter 06: Decision Integrity</span>
+        </a>
+    </nav>
+    
+
+            
+    <div class="monograph-citation-box">
+        <strong>Cite this Chapter (APA):</strong><br>
+        Haldankar, S. R. (2026). <em>Actual Profit: Eliminating the 0.1% Loss in Decision Integrity</em> (Applied Case Studies & Y-Axis Distortion). The Haldankar Method Research Laboratory. ORCID: 0009-0000-9372-059X.
+    </div>
+{% endblock %}

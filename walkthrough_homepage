@@ -1,0 +1,105 @@
+# Homepage Migration Execution & Verification — Walkthrough
+
+## Overview
+Following user authorization ("Approve go"), the **Homepage** was successfully extracted from the old project (`research_lab`) and integrated into the dedicated `haldankar_homepage` Django application within the new Django project (`the_haldankar_method_research_laboratory`).
+
+- **Source Project:** `C:\Users\user\PycharmProjects\NSE_banking\research_lab` (Untouched & intact)
+- **Destination Project:** `C:\Users\user\PycharmProjects\the_haldankar_method_research_laboratory`
+- **Destination App:** `haldankar_homepage`
+
+---
+
+## Executed Migration Steps
+
+1. **Shared Project Templates Established:**
+   - Created root `templates/` and `templates/partials/` in destination project.
+   - Migrated `base.html` to `templates/base.html`.
+   - Migrated `nav.html` to `templates/partials/nav.html`.
+   - Migrated `footer.html` to `templates/partials/footer.html`.
+
+2. **Shared Project Static Infrastructure Established:**
+   - Created static directories: `css/global`, `css/components`, `js/components`, `images/books`, `publications/books/actual-profit`.
+   - Migrated `research-tokens.css` and `style.css` into `static/css/global/` (preserving `@import url('research-tokens.css');` co-location).
+   - Migrated `nav.css` and `promo.css` into `static/css/components/`.
+   - Migrated `script.js` into `static/js/`.
+   - Migrated `nav-interactions.js` and `promo-engine.js` into `static/js/components/`.
+   - Migrated thumbnail cover `the-architecture-of-a-decision-cover.png` and Monograph PDF `actual-profit-final.pdf`.
+
+3. **`haldankar_homepage` Application Wired:**
+   - Created namespaced template folder `haldankar_homepage/templates/haldankar_homepage/` and copied `home.html` (402 lines, 6 core sections).
+   - Updated `haldankar_homepage/views.py` with `home(request)` view passing `active_page='home'` and `promo_eligible=True`, and `contact_submit_stub(request)` returning JSON success for POST to `/contact/submit/`.
+   - Created `haldankar_homepage/urls.py` routing `/` and `/contact/submit/`.
+
+4. **Destination Project Settings & Root Routing Configured:**
+   - Updated `settings.py`:
+     - Added `'haldankar_homepage'` to `INSTALLED_APPS`.
+     - Configured `TEMPLATES[0]['DIRS'] = [BASE_DIR / 'templates']`.
+     - Configured `STATICFILES_DIRS = [BASE_DIR / 'static']`.
+   - Updated root `urls.py`:
+     - Added `path('', include('haldankar_homepage.urls'))`.
+
+---
+
+## Verification Results
+
+### 1. System Diagnostics (`python manage.py check`)
+```text
+System check identified no issues (0 silenced).
+Exit Code: 0
+```
+
+### 2. View Rendering Test
+- **HTTP Status Code:** `200`
+- **Rendered HTML Length:** 32,499 bytes
+- **Template Inheritance & Blocks:** `base.html` shell, `nav.html` header, `footer.html` copyright, dark theme (`data-theme="dark"`), and all 6 homepage sections rendered cleanly with zero template errors.
+
+### 3. Contact Form Submission Stub Test
+- **Endpoint:** `/contact/submit/` (HTTP POST)
+- **Status Code:** `200`
+- **Response Content:** `{"success": true, "message": "Inquiry transmitted successfully (stub)."}`
+
+---
+
+## Final Destination Directory Structure
+
+```text
+the_haldankar_method_research_laboratory/
+├── manage.py
+├── db.sqlite3
+├── the_haldankar_method_research_laboratory/
+│   ├── settings.py                       ← INSTALLED_APPS, TEMPLATES DIRS, STATICFILES_DIRS configured
+│   └── urls.py                           ← Includes haldankar_homepage.urls at root path ''
+├── haldankar_homepage/
+│   ├── apps.py
+│   ├── views.py                          ← def home & def contact_submit_stub
+│   ├── urls.py                           ← path('', views.home) & path('contact/submit/')
+│   ├── models.py
+│   └── templates/
+│       └── haldankar_homepage/
+│           └── home.html                 ← 402-line master Homepage template
+├── templates/
+│   ├── base.html                         ← Master site shell
+│   └── partials/
+│       ├── nav.html                      ← Site header navigation bar
+│       └── footer.html                   ← Site footer copyright block
+└── static/
+    ├── css/
+    │   ├── global/
+    │   │   ├── research-tokens.css       ← APCA design system tokens
+    │   │   └── style.css                 ← Master stylesheet (@import research-tokens.css)
+    │   └── components/
+    │       ├── nav.css                   ← Header styling
+    │       └── promo.css                 ← Announcement capsule styling
+    ├── js/
+    │   ├── script.js                     ← Reading progress & contact form AJAX handler
+    │   └── components/
+    │       ├── nav-interactions.js       ← Mobile menu drawer script
+    │       └── promo-engine.js           ← Publication announcement capsule engine
+    ├── images/
+    │   └── books/
+    │       └── the-architecture-of-a-decision-cover.png  ← Cover thumbnail
+    └── publications/
+        └── books/
+            └── actual-profit/
+                └── actual-profit-final.pdf  ← Archival Monograph PDF
+```

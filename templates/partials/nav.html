@@ -1,0 +1,45 @@
+<header class="site-header" id="site-header">
+    <div class="header-container">
+        <div class="header-brand-group">
+            <a href="/" class="lab-brand" aria-label="The Haldankar Method Research Laboratory Homepage">
+                <span class="lab-brand__title">THE HALDANKAR METHOD</span>
+                <span class="lab-brand__subtitle">RESEARCH LABORATORY</span>
+            </a>
+        </div>
+        <nav class="header-nav" id="header-nav" aria-label="Main Navigation">
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link {% if active_page == 'home' %}active{% endif %}">Home</a></li>
+                <li class="nav-dropdown" id="research-dropdown-container">
+                    <div class="dropdown-trigger-wrapper">
+                        <a href="/research/" class="nav-link {% if active_page == 'research' or active_page == 'evidence' or active_page == 'publications' %}active{% endif %}" id="research-nav-link">
+                            Research <span class="dropdown-caret" aria-hidden="true">▼</span>
+                        </a>
+                        <button type="button" class="dropdown-toggle-btn" id="research-dropdown-btn" aria-expanded="false" aria-haspopup="true" aria-label="Toggle Research Submenu">
+                            ▼
+                        </button>
+                    </div>
+                    <ul class="dropdown-menu" id="research-dropdown-menu" aria-label="Research Submenu">
+                        <li><a href="/research/" class="dropdown-link">Research Hub Overview</a></li>
+                        <li class="dropdown-divider" role="separator"></li>
+                        <li><a href="/research/actual-profit/" class="dropdown-link">Actual Profit</a></li>
+                        <li><a href="/research/decision-context-model/" class="dropdown-link">Decision Context Model (DCM)</a></li>
+                        <li class="dropdown-divider" role="separator"></li>
+                        <li><a href="/publications/" class="dropdown-link">Publications &amp; Citations</a></li>
+                    </ul>
+                </li>
+                <li><a href="/books/the-architecture-of-a-decision/" class="nav-link {% if active_page == 'books' %}active{% endif %}">Books</a></li>
+                <li><a href="/laboratory/" class="nav-link {% if active_page == 'laboratory' %}active{% endif %}">Laboratory</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            {% block nav_contextual_actions %}{% endblock %}
+            <a href="/publications/books/actual-profit/actual-profit-final.pdf" download="Actual Profit.pdf" class="header-btn" title="Download Monograph PDF">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                <span>PDF</span>
+            </a>
+            <button type="button" class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false">
+                ☰
+            </button>
+        </div>
+    </div>
+</header>

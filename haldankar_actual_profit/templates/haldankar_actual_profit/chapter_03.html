@@ -1,0 +1,261 @@
+{% extends 'haldankar_actual_profit/base_monograph.html' %}
+{% load static %}
+
+{% block title %}The Screen Chapter — Actual Profit Monograph | The Haldankar Method{% endblock %}
+{% block description %}The Screen Chapter: Interface Ergonomics and Visual Dominance in Financial Execution. Authored by Suraj Rohit Haldankar.{% endblock %}
+
+{% block monograph_active %}chapter_03{% endblock %}
+
+{% block monograph_content %}
+<header class="monograph-header">
+                <div class="monograph-chapter-tag">CHAPTER 03 · PERCEPTUAL COMPETITION</div>
+                <h1 class="monograph-title">The Screen Chapter</h1>
+                <div class="monograph-subtitle">Interface Ergonomics and Visual Dominance in Financial Execution</div>
+                <div class="monograph-meta-bar">
+                    <span>Author: <strong>Suraj Rohit Haldankar</strong></span>
+                    <span>ORCID: <a href="https://orcid.org/0009-0000-9372-059X" target="_blank" rel="noopener noreferrer" class="link-inline">0009-0000-9372-059X ↗</a></span>
+                    <span>Format: <strong>Digital Monograph</strong></span>
+                </div>
+            </header>
+
+            <!-- 1. Chapter Identity & Orientation -->
+            
+
+            <!-- 2. Opening Provocation -->
+            <div class="provocation-block">
+                <div class="provocation-block__label">Fundamental Diagnostic Question</div>
+                <blockquote class="provocation-block__quote">
+                    “Are you one hundred percent sure that what you see on a screen is the same as the information itself?”
+                </blockquote>
+            </div>
+
+            <!-- 3. Section 1: The Screen as an Active Decision Variable -->
+            <h2>The Screen as an Active Decision Variable</h2>
+            <p>
+                The screen is not a passive, neutral window. It is a designed visual environment that actively facilitates or obstructs cognitive processing.
+            </p>
+            <p>
+                According to <strong class="mono-term">Don Norman</strong> (2002), interface design choices directly shape visceral and cognitive responses. The physical affordances and spatial structure of a display determine how users allocate attention, structure priorities, and process incoming data.
+            </p>
+            <p>
+                Furthermore, information delivery depends directly on device-specific physical parameters. Research by <strong class="mono-term">Kim & Sundar</strong> (2014) demonstrates that screen dimensions alter cognitive heuristics (e.g., the <em>"bigger is better"</em> heuristic), shifting a user's perceived certainty and subjective attitude toward identical numerical data.
+            </p>
+
+            <!-- 4. Section 2: Display Unit Architecture -->
+            <h2>The Final Variable: Display Unit Architecture</h2>
+            <p>
+                In institutional finance, all analytical infrastructure culminates at the screen: <mark class="mono-verdict">a human being interpreting visual stimuli</mark>. That is where judgment is forged, and where the most consistently ignored variable operates.
+            </p>
+            <p>
+                According to <strong class="mono-term">David K. Farkas</strong> (2005), the <strong class="mono-term">"display unit"</strong> of a screen dictates how documents and data are organized, proportioned, and comprehended:
+            </p>
+
+            <div class="display-constraint-list">
+                <div class="display-constraint-item">
+                    <span class="display-constraint-item__num">01</span>
+                    <div>
+                        <div class="display-constraint-item__title">Display Boundaries</div>
+                        <p class="display-constraint-item__desc">Physical screen size defines what is visible without scrolling, creating artificial segmentation boundaries across complex financial documents and multi-pane charts.</p>
+                    </div>
+                </div>
+                <div class="display-constraint-item">
+                    <span class="display-constraint-item__num">02</span>
+                    <div>
+                        <div class="display-constraint-item__title">Aspect Ratio</div>
+                        <p class="display-constraint-item__desc">Screen width-to-height proportions determine chart geometry, directly altering the perceived geometric slope of price trends and perceived volatility.</p>
+                    </div>
+                </div>
+                <div class="display-constraint-item">
+                    <span class="display-constraint-item__num">03</span>
+                    <div>
+                        <div class="display-constraint-item__title">Pixel Resolution</div>
+                        <p class="display-constraint-item__desc">Resolution constrains the legible density of metrics and indicators before visual clutter induces cognitive illegibility and interpretation latency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p style="font-size: 0.9375rem; color: var(--text-secondary);">
+                <em>The display architecture directly influences how information is visually organized and cognitively interpreted.</em>
+            </p>
+
+            <!-- 5. Section 3: Why Screen Errors Operate "Upstream" -->
+            <h2>Why Screen Errors Operate "Upstream"</h2>
+            <p>
+                To understand why interface flaws cause persistent trading errors, analytical errors must be distinguished by where they occur in the decision chain:
+            </p>
+
+            <div class="upstream-comparison">
+                <div class="upstream-card upstream-card--downstream">
+                    <div class="upstream-card__label">Downstream Analytical Error</div>
+                    <div class="upstream-card__title">Model-Level Failure</div>
+                    <p class="upstream-card__desc">
+                        Flawed assumptions, miscalibrated weights, or incomplete training datasets. These errors occur within the calculation pipeline and can be audited and corrected mathematically.
+                    </p>
+                </div>
+                <div class="upstream-card upstream-card--upstream">
+                    <div class="upstream-card__label">Upstream Screen Error</div>
+                    <div class="upstream-card__title">Perceptual Corruption</div>
+                    <p class="upstream-card__desc">
+                        Corrupts the sensory input before cognitive reasoning begins (Nakanishi et al., 2025). Screen distortion impacts PhD quants, portfolio managers, and junior analysts equally.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                <mark class="mono-verdict">If the input is distorted by presentation friction, downstream analytical sophistication cannot automatically correct the perceptual problem.</mark>
+            </p>
+
+            <!-- 6. Section 4: Institutional Leverage -->
+            <h2>Institutional Leverage: The Tractable Variable</h2>
+            <p>
+                Trading desks expend immense capital analyzing external market factors over which they have zero control:
+            </p>
+
+            <div style="margin: 1.5rem 0; padding: 1.25rem 1.5rem; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-sm);">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.875rem;">
+                    <div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.35rem;">External / Uncontrollable</div>
+                        <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-secondary); line-height: 1.5;">
+                            <li>Market Volatility</li>
+                            <li>Macroeconomic Shocks</li>
+                            <li>Competitor Order Flow</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="font-family: var(--font-mono); font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 0.35rem;">Internal / Controllable</div>
+                        <ul style="margin: 0; padding-left: 1.25rem; color: var(--text-primary); font-weight: 500; line-height: 1.5;">
+                            <li>Information Architecture</li>
+                            <li>Visual Scaling Geometry</li>
+                            <li>Display Presentation Friction</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="research-card research-card--gold">
+                <div class="research-card__header">
+                    <span class="research-card__label">Institutional Leverage</span>
+                    <span class="research-card__badge">Tractable Variable</span>
+                </div>
+                <div class="research-card__content">
+                    <p>
+                        <strong class="mono-verdict-core">The screen is not an external market condition — it is an internal design choice, and design choices can be engineered.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 7. Section 5: Systemic Responsibility & Regulatory Readability -->
+            <h2>Systemic Responsibility & Regulatory Readability</h2>
+            <p>
+                When an analyst misinterprets a complex dashboard, attributing the mistake to personal negligence is a fundamental diagnostic error. As <strong class="mono-term">Sidney Dekker</strong> (2002) notes, human error is a systemic consequence of the engineered tools and environments provided by the organization.
+            </p>
+            <p>
+                Financial regulators have codified this reality into explicit disclosure and communication standards:
+            </p>
+            <ul>
+                <li><strong>SEC Rule 421(d) (Plain English Handbook):</strong> Requires financial disclosures to be <em>"visually inviting"</em>, mandating clean tabular presentations, bullet points, and distinct visual hierarchy (SEC, 1998).</li>
+                <li><strong>FCA Principles:</strong> Mandates that financial communications must be <em>"clear, fair, and not misleading"</em> across all investor-facing and operational formats (FCA, 2017).</li>
+            </ul>
+
+            <!-- 8. Section 6: The Two Diagnostic Frameworks -->
+            <h2>The Two Diagnostic Frameworks</h2>
+            <p>
+                Recognizing the screen as an active variable requires precision diagnostic tools to measure and eliminate presentation friction. The Haldankar Method establishes <strong class="mono-term">two diagnostic pillars</strong>:
+            </p>
+
+            <div class="diagnostic-pillar-grid">
+                <div class="diagnostic-pillar-card">
+                    <div>
+                        <div class="diagnostic-pillar-card__header">
+                            <div class="diagnostic-pillar-card__num">Pillar 01</div>
+                            <h3 class="diagnostic-pillar-card__title">White Paper Test Theory</h3>
+                        </div>
+                        <p class="diagnostic-pillar-card__desc">
+                            Diagnoses information volume, visual clutter, and document structure. Measures the preliminary cognitive burden imposed on human attention before analytical interpretation begins.
+                        </p>
+                    </div>
+                    <a href="/research/actual-profit/chapter-04-white-paper-test/" class="diagnostic-pillar-card__link">
+                        <span>Developed in full in Chapter 04</span>
+                        <span>→</span>
+                    </a>
+                </div>
+                <div class="diagnostic-pillar-card">
+                    <div>
+                        <div class="diagnostic-pillar-card__header">
+                            <div class="diagnostic-pillar-card__num">Pillar 02</div>
+                            <h3 class="diagnostic-pillar-card__title">Y-Axis Distortion Analysis</h3>
+                        </div>
+                        <p class="diagnostic-pillar-card__desc">
+                            Diagnoses visual scale distortions and dynamic auto-scaling errors. Resolves the biological dominance of visual geometry over numerical logic in candlestick chart interpretation.
+                        </p>
+                    </div>
+                    <a href="/research/actual-profit/chapter-05-applied-case-studies/" class="diagnostic-pillar-card__link">
+                        <span>Developed in full in Chapter 05</span>
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 9. Section 7: Concluding Synthesis -->
+            <div class="research-card research-card--gold" style="margin-top: 3rem;">
+                <div class="research-card__header">
+                    <span class="research-card__label">Chapter Synthesis</span>
+                    <span class="research-card__badge">The Final Mile</span>
+                </div>
+                <div class="research-card__content">
+                    <p style="font-size: 1.0625rem; line-height: 1.6;">
+                        The screen is the final mile of institutional decision-making. Ignoring interface architecture does not eliminate its cost — <mark class="mono-verdict">it simply leaves the cost unmeasured</mark>.
+                    </p>
+                    <p style="margin-top: 0.75rem; font-family: var(--font-serif); font-size: 1.1875rem; font-style: italic; color: var(--gold);">
+                        Recovering this lost margin by aligning information design with human cognitive processing is the core objective of this research. <strong class="mono-verdict-core">That recovery is Actual Profit.</strong>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 10. Academic References -->
+            <section class="references-section">
+                <h3 class="references-heading">Chapter References & Sources</h3>
+                <ul class="references-list">
+                    <li>Dekker, S. (2002). <em>The field guide to understanding human error</em>. Ashgate.</li>
+                    <li>Farkas, D. K. (2005). Explicit structure in print and on-screen documents. <em>Technical Communication Quarterly</em>, 14(1), 9–30.</li>
+                    <li>Financial Conduct Authority (FCA). (2017). <em>Occasional Paper 26: From advert to action: Behavioural insights into the advertising of financial products</em>.</li>
+                    <li>Kahneman, D. (2011). <em>Thinking, fast and slow</em>. Farrar, Straus and Giroux.</li>
+                    <li>Kim, K. J., & Sundar, S. S. (2014). Does screen size matter for smartphones? Utilitarian and hedonic effects of screen size on smartphone adoption. <em>Cyberpsychology, Behavior, and Social Networking</em>, 17(7), 466–473.</li>
+                    <li>Nakanishi, J., et al. (2025). Hypothesis on the functional advantages of the selection-broadcast cycle structure: Global workspace theory and dealing with a real-time world. <em>arXiv</em>.</li>
+                    <li>Norman, D. A. (2002). <em>The design of everyday things</em>. Basic Books.</li>
+                    <li>Omar, K., et al. (2024). Usability heuristics for metaverse. <em>Computers</em>, 13(9), 222.</li>
+                    <li>Securities and Exchange Commission (SEC). (1998). <em>A plain English handbook: How to create clear SEC disclosure documents</em>.</li>
+                </ul>
+            </section>
+
+            <!-- Chapter Navigation -->
+            <nav class="chapter-nav-grid" aria-label="Chapter Navigation">
+                <a href="/research/actual-profit/chapter-02-human-processor/" class="chapter-nav-card">
+                    <span class="chapter-nav-card__direction">← Previous Chapter</span>
+                    <span class="chapter-nav-card__title">Chapter 02: Biological Constraint — The Human Processor</span>
+                </a>
+                <a href="/research/actual-profit/chapter-04-white-paper-test/" class="chapter-nav-card chapter-nav-card--next">
+                    <span class="chapter-nav-card__direction">Next Chapter →</span>
+                    <span class="chapter-nav-card__title">Chapter 04: White Paper Test Theory</span>
+                </a>
+            </nav>
+
+            
+    <nav class="monograph-pagination" aria-label="Chapter Navigation">
+        <a href="/research/actual-profit/chapter-02-human-processor/" class="pagination-btn">
+            <span class="pagination-btn__dir">&larr; Previous</span>
+            <span class="pagination-btn__title">Chapter 02: The Human Processor</span>
+        </a>
+        <a href="/research/actual-profit/chapter-04-white-paper-test/" class="pagination-btn is-next">
+            <span class="pagination-btn__dir">Next &rarr;</span>
+            <span class="pagination-btn__title">Chapter 04: White Paper Test Theory</span>
+        </a>
+    </nav>
+    
+
+            
+    <div class="monograph-citation-box">
+        <strong>Cite this Chapter (APA):</strong><br>
+        Haldankar, S. R. (2026). <em>Actual Profit: Eliminating the 0.1% Loss in Decision Integrity</em> (The Screen Chapter). The Haldankar Method Research Laboratory. ORCID: 0009-0000-9372-059X.
+    </div>
+{% endblock %}

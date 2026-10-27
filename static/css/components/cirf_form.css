@@ -1,0 +1,164 @@
+/* ==========================================================================
+   SERVICE 03 — CIRF INQUIRY FORM STYLES
+   Pure Dark Terminal Aesthetic / APCA Compliant
+   ========================================================================== */
+
+.cirf-form-card {
+    background: var(--bg-surface, #09090b);
+    border: 1px solid var(--accent-gold-border, rgba(198, 162, 39, 0.35));
+    border-radius: 4px;
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    margin: 2rem 0;
+}
+
+.cirf-form-header {
+    border-bottom: 1px solid var(--border-subtle, #27272a);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.cirf-form-title {
+    font-family: var(--font-serif, Georgia, serif);
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    color: var(--text-primary, #f4f4f5);
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+}
+
+.cirf-form-subtitle {
+    font-size: 0.9375rem;
+    color: var(--text-secondary, #d4d4d8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cirf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.cirf-field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.cirf-field-group--full {
+    grid-column: 1 / -1;
+}
+
+.cirf-label {
+    font-family: var(--font-mono, monospace);
+    font-size: 0.78125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent-gold, #c6a227);
+    font-weight: 600;
+}
+
+.cirf-input,
+.cirf-select,
+.cirf-textarea {
+    background: var(--bg-surface-elevated, #121215);
+    border: 1px solid var(--border-strong, #3f3f46);
+    border-radius: 3px;
+    padding: 0.65rem 0.85rem;
+    font-family: var(--font-sans, inherit);
+    font-size: 0.9375rem;
+    color: var(--text-primary, #f4f4f5);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cirf-select option {
+    background: #121215;
+    color: #f4f4f5;
+}
+
+.cirf-input:focus,
+.cirf-select:focus,
+.cirf-textarea:focus {
+    outline: none;
+    border-color: var(--accent-gold, #c6a227);
+    box-shadow: 0 0 0 2px rgba(198, 162, 39, 0.15);
+}
+
+.cirf-textarea {
+    min-height: 110px;
+    resize: vertical;
+
+.cirf-checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin: 1rem 0;
+    padding: 0.75rem;
+    background: var(--bg-surface-elevated, #121215);
+    border: 1px solid var(--border-subtle, #27272a);
+    border-radius: 3px;
+}
+
+.cirf-checkbox {
+    margin-top: 0.25rem;
+    accent-color: var(--accent-gold, #c6a227);
+    cursor: pointer;
+}
+
+.cirf-checkbox-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary, #d4d4d8);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.cirf-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-mono, monospace);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-inverse, #000000);
+    background: var(--accent-gold, #c6a227);
+    padding: 0.85rem 1.6rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cirf-submit-btn:hover {
+    background: var(--accent-hover, #d4af37);
+}
+
+.cirf-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cirf-feedback {
+    margin-top: 1rem;
+    padding: 0.85rem 1.15rem;
+    border-radius: 3px;
+    font-size: 0.90625rem;
+    line-height: 1.5;
+    display: none;
+}
+
+.cirf-feedback.success {
+    display: block;
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.35);
+    color: #4ade80;
+}
+
+.cirf-feedback.error {
+    display: block;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.35);
+    color: #f87171;
+}

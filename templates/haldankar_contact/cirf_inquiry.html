@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Service 03 — CIRF Inquiry — The Haldankar Method{% endblock %}
+{% block description %}Discuss CIRF (Contextual Information Representation Framework) integration for your organization, business unit, or professional information environment.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/components/cirf_form.css' %}">
+<style>
+    .cirf-page-container {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: clamp(2rem, 4vw, 4rem) 1.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="cirf-page-container">
+    
+    <header class="cirf-form-header" style="border-bottom: none; margin-bottom: 1rem;">
+        <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap;">
+            <span class="status-pill status-pill--gold">Service 03 — Organizational Adoption</span>
+            <span class="status-pill">CIRF Integration</span>
+            <span class="status-pill">The Haldankar Method</span>
+        </div>
+        <h1 class="foundation-title">Service 03 — CIRF Inquiry</h1>
+        <div class="foundation-subtitle">Contextual Information Representation Framework</div>
+    </header>
+
+    <div class="prose-block" style="margin-bottom: 2rem;">
+        <p>
+            Service 03 (CIRF) is our paid organizational offering. We partner with organizations, business units, and professional teams to develop custom information architectures and document-generation rulesets tailored to your specific operating environment, information types, and professional reading requirements.
+        </p>
+    </div>
+
+    <!-- CIRF INQUIRY FORM CARD -->
+    <div class="cirf-form-card" id="cirf-form-container">
+        <div class="cirf-form-header">
+            <h2 class="cirf-form-title">Discuss CIRF for Your Organization</h2>
+            <p class="cirf-form-subtitle">
+                Provide your initial organizational context below. Our research team will review your information environment and schedule a discovery briefing.
+            </p>
+        </div>
+
+        <form id="cirf-inquiry-form" action="/contact/cirf/submit/" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="honeypot" value="">
+
+            <div class="cirf-grid">
+                <div class="cirf-field-group">
+                    <label for="id_full_name" class="cirf-label">Full Name *</label>
+                    <input type="text" id="id_full_name" name="full_name" class="cirf-input" placeholder="e.g., Sarah Jenkins" required>
+                </div>
+
+                <div class="cirf-field-group">
+                    <label for="id_work_email" class="cirf-label">Corporate Work Email *</label>
+                    <input type="email" id="id_work_email" name="work_email" class="cirf-input" placeholder="e.g., s.jenkins@institution.com" required>
+                </div>
+
+                <div class="cirf-field-group">
+                    <label for="id_organization_name" class="cirf-label">Organization Name *</label>
+                    <input type="text" id="id_organization_name" name="organization_name" class="cirf-input" placeholder="e.g., Apex Capital Management" required>
+                </div>
+
+                <div class="cirf-field-group">
+                    <label for="id_business_unit_department" class="cirf-label">Business Unit / Department *</label>
+                    <input type="text" id="id_business_unit_department" name="business_unit_department" class="cirf-input" placeholder="e.g., Risk &amp; Compliance Division" required>
+                </div>
+
+                <div class="cirf-field-group cirf-field-group--full">
+                    <label for="id_primary_information_environment" class="cirf-label">Primary Information Environment *</label>
+                    <select id="id_primary_information_environment" name="primary_information_environment" class="cirf-select" required>
+                        <option value="">Select Primary Information Environment...</option>
+                        <option value="financial">Financial Disclosures / Equity &amp; Credit Research</option>
+                        <option value="legal">Legal Contracts &amp; Regulatory Compliance</option>
+                        <option value="risk">Risk &amp; Quantitative Decision Context Models</option>
+                        <option value="technical">Healthcare &amp; Technical Documentation</option>
+                        <option value="corporate">Corporate Operations &amp; Internal Workflows</option>
+                    </select>
+                </div>
+
+                <div class="cirf-field-group cirf-field-group--full">
+                    <label for="id_primary_document_types" class="cirf-label">Primary Document Types (Optional)</label>
+                    <input type="text" id="id_primary_document_types" name="primary_document_types" class="cirf-input" placeholder="e.g., Quarterly Credit Opinions &amp; 10-K Filings">
+                </div>
+
+                <div class="cirf-field-group cirf-field-group--full">
+                    <label for="id_inquiry_summary" class="cirf-label">Inquiry Summary &amp; Organizational Goals *</label>
+                    <textarea id="id_inquiry_summary" name="inquiry_summary" class="cirf-textarea" placeholder="Briefly describe your team's document review or representation challenge..." required></textarea>
+                </div>
+            </div>
+
+            <div class="cirf-checkbox-group">
+                <input type="checkbox" id="id_confidentiality_acknowledgment" name="confidentiality_acknowledgment" class="cirf-checkbox" required>
+                <label for="id_confidentiality_acknowledgment" class="cirf-checkbox-label">
+                    I acknowledge this is an initial inquiry and agree not to transmit unreleased proprietary trade secrets prior to formal NDA execution. *
+                </label>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <button type="submit" id="cirf-submit-btn" class="cirf-submit-btn">
+                    <span>Transmit CIRF Inquiry</span>
+                    <span>→</span>
+                </button>
+            </div>
+
+            <div id="cirf-form-feedback" class="cirf-feedback" role="alert"></div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}

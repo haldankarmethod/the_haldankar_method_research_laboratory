@@ -1,0 +1,417 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}HDFC Bank Controlled Experiment — The Haldankar Method{% endblock %}
+{% block description %}Empirical dataset showing Large Language Model output transformation matrices under four distinct institutional mandates with perfectly invariant financial disclosures.{% endblock %}
+{% block keywords %}HDFC Bank, AI Experiment, Mandate Conditioning, Output Geometry, Invariant Data, Large Language Models, Decision Context Models, Suraj Rohit Haldankar{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/evidence/hdfc_experiment.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/evidence/hdfc_experiment.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<!-- ==========================================================================
+   SECTION 01 — EXPERIMENT IDENTITY & SCIENTIFIC QUESTION
+   ========================================================================== -->
+<section id="hero" class="section" style="padding-top: clamp(3.5rem, 6vw, 5.5rem); padding-bottom: clamp(2.5rem, 4vw, 3.5rem);">
+    <div class="container">
+        <div style="max-width: 880px;">
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin-bottom: var(--space-4);">
+                <a href="/research/decision-context-model/" class="status-pill status-pill--finding" style="text-decoration: none;">← DECISION CONTEXT MODEL (DCM) PROGRAM</a>
+                <span class="status-pill status-pill--evidence">EMPIRICAL DATA RELEASE</span>
+                <span class="status-pill">INVARIANT DATASET: NSE HDFC BANK</span>
+                <span class="status-pill">VER 2.5</span>
+            </div>
+
+            <h1 style="font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.15; margin-bottom: var(--space-4); letter-spacing: -0.02em;">
+                HDFC Bank Controlled Experiment
+            </h1>
+
+            <div style="font-family: var(--font-serif); font-style: italic; font-size: clamp(1.15rem, 2.2vw, 1.45rem); color: var(--accent-gold); margin-bottom: var(--space-4);">
+                Mandate-Conditioned Output Geometry Under Invariant Financial Evidence
+            </div>
+
+            <p class="lead-paragraph" style="color: var(--text-primary); line-height: 1.6; margin-bottom: var(--space-6);">
+                Can an AI model's analytical prioritization, risk boundaries, and verdict be fundamentally altered across institutional mandates without altering a single underlying financial data point?
+            </p>
+
+            <!-- Scientific Method Progression Strip -->
+            <div class="scientific-method-strip" aria-label="Scientific Method Stages">
+                <span class="method-node method-node--active">[QUESTION]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[DATA]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[EXPERIMENT]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[OBSERVATION]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[INTERPRETATION]</span>
+                <span class="method-arrow">→</span>
+                <span class="method-node method-node--active">[LIMITATION]</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 02 — THE INVARIANT FINANCIAL EVIDENCE BASELINE
+   ========================================================================== -->
+<section id="dataset" class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">01 // INVARIANT DATA BASELINE</span>
+            <h2 class="section-title">The Experimental Control Dataset</h2>
+            <p class="section-subtitle">
+                Standardized financial disclosures from HDFC Bank Limited (NSE: HDFCBANK) held perfectly invariant across all test conditions.
+            </p>
+        </div>
+
+        <div class="table-scroll-container" tabindex="0" aria-label="HDFC Bank Invariant Financial Matrix">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Financial Metric</th>
+                        <th>Q3 FY25 (Reported)</th>
+                        <th>Q4 FY25 (Reported)</th>
+                        <th>Q1 FY26 (Reported)</th>
+                        <th>Q2 FY26 (Current)</th>
+                        <th>YoY Variance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Net Interest Income (NII, ₹ Cr)</td>
+                        <td>28,471</td>
+                        <td>29,078</td>
+                        <td>29,837</td>
+                        <td>30,114</td>
+                        <td style="color: var(--accent-gold);">+5.77%</td>
+                    </tr>
+                    <tr>
+                        <td>Net Interest Margin (NIM, %)</td>
+                        <td>3.46%</td>
+                        <td>3.44%</td>
+                        <td>3.47%</td>
+                        <td>3.46%</td>
+                        <td>0.00 bps</td>
+                    </tr>
+                    <tr>
+                        <td>Gross Non-Performing Assets (GNPA, %)</td>
+                        <td>1.26%</td>
+                        <td>1.24%</td>
+                        <td>1.33%</td>
+                        <td>1.36%</td>
+                        <td style="color: #f87171;">+10 bps</td>
+                    </tr>
+                    <tr>
+                        <td>Net Non-Performing Assets (NNPA, %)</td>
+                        <td>0.31%</td>
+                        <td>0.33%</td>
+                        <td>0.39%</td>
+                        <td>0.41%</td>
+                        <td style="color: #f87171;">+10 bps</td>
+                    </tr>
+                    <tr>
+                        <td>Provision Coverage Ratio (PCR, %)</td>
+                        <td>75.4%</td>
+                        <td>73.4%</td>
+                        <td>70.7%</td>
+                        <td>69.9%</td>
+                        <td style="color: #f87171;">-550 bps</td>
+                    </tr>
+                    <tr>
+                        <td>Capital Adequacy Ratio (CRAR / Tier 1, %)</td>
+                        <td>19.8%</td>
+                        <td>18.8%</td>
+                        <td>19.3%</td>
+                        <td>19.8%</td>
+                        <td style="color: var(--accent-gold);">+0.00%</td>
+                    </tr>
+                    <tr>
+                        <td>CASA Deposit Ratio (%)</td>
+                        <td>37.7%</td>
+                        <td>38.2%</td>
+                        <td>36.3%</td>
+                        <td>35.8%</td>
+                        <td style="color: #f87171;">-190 bps</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 03 — SIDE-BY-SIDE MANDATE MATRICES & OBSERVATIONS
+   ========================================================================== -->
+<section id="matrices" class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-eyebrow">02 // CONTROLLED COMPARISON MATRICES</span>
+            <h2 class="section-title">Baseline vs. Mandate-Conditioned Output</h2>
+            <p class="section-subtitle">
+                Select an institutional mandate below to inspect the observed output transformation against the baseline unconditioned response.
+            </p>
+        </div>
+
+        <!-- Tab Controls for Mandate Switching -->
+        <div class="mandate-tab-bar" role="tablist" aria-label="Institutional Mandates">
+            <button type="button" class="mandate-tab-btn is-active" data-mandate-target="panel-credit" role="tab" aria-selected="true">
+                Mandate A: Senior Credit Committee
+            </button>
+            <button type="button" class="mandate-tab-btn" data-mandate-target="panel-trading" role="tab" aria-selected="false">
+                Mandate B: Active Trading Desk
+            </button>
+            <button type="button" class="mandate-tab-btn" data-mandate-target="panel-risk" role="tab" aria-selected="false">
+                Mandate C: Risk &amp; Stress-Testing
+            </button>
+            <button type="button" class="mandate-tab-btn" data-mandate-target="panel-investment" role="tab" aria-selected="false">
+                Mandate D: Value Investment Committee
+            </button>
+        </div>
+
+        <!-- ==============================================================
+           PANEL A — SENIOR CREDIT COMMITTEE
+           ============================================================== -->
+        <div id="panel-credit" class="mandate-panel is-active" role="tabpanel">
+            <div class="matrix-container">
+                <!-- Condition 1: Baseline -->
+                <div class="matrix-col matrix-col--baseline">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 1: Baseline LLM (Unconditioned)</span>
+                        <span class="status-pill status-pill--problem">SILENT ASSUMPTIONS</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Generic Summary:</strong> "HDFC Bank demonstrates robust quarterly performance with NII growing 5.77% YoY to ₹30,114 Cr. Asset quality remains stable with Gross NPA at 1.36% and Capital Adequacy strong at 19.8%."
+                        </p>
+                        <p>
+                            <strong>Failure Diagnostics:</strong> The model blended equity growth metrics with solvency indicators. It failed to identify the 550 bps deterioration in Provision Coverage Ratio (PCR) and offered no warning on debt covenant risk.
+                        </p>
+                        <p style="margin-bottom: 0; color: var(--text-muted); font-size: 0.8125rem;">
+                            <em>Silent Assumption: Assumed a general balanced investment horizon with undefined risk tolerance.</em>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Condition 2: DCM Conditioned -->
+                <div class="matrix-col matrix-col--conditioned">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 2: DCM-Conditioned (Credit Mandate)</span>
+                        <span class="status-pill status-pill--finding">MANDATE-ALIGNED</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Prioritized Metric:</strong> Tier-1 CRAR (19.8%) and Net NPA trend (+10 bps to 0.41%). NII growth demoted to secondary context.
+                        </p>
+                        <p>
+                            <strong>Credit Verdict:</strong> Solvency remains Tier-1 secure. However, deteriorating PCR (69.9%) demands an increased provision buffer for newly merged retail mortgage tranches.
+                        </p>
+                        
+                        <!-- Decision-Blocking Unknowns Callout -->
+                        <div class="unknowns-callout">
+                            <div class="unknowns-callout__title">
+                                <span>[DECISION-BLOCKING UNKNOWNS]</span>
+                            </div>
+                            <ul class="unknowns-callout__list">
+                                <li>Specific maturity schedule for ₹1.2T post-merger wholesale refinance obligations.</li>
+                                <li>Granular asset classification of restructured retail unsecured book.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==============================================================
+           PANEL B — ACTIVE TRADING DESK
+           ============================================================== -->
+        <div id="panel-trading" class="mandate-panel" role="tabpanel">
+            <div class="matrix-container">
+                <div class="matrix-col matrix-col--baseline">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 1: Baseline LLM (Unconditioned)</span>
+                        <span class="status-pill status-pill--problem">SILENT ASSUMPTIONS</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Generic Summary:</strong> "HDFC Bank shows steady compounding value. Long-term investors should note strong Tier 1 capital and steady interest margins across quarters."
+                        </p>
+                        <p>
+                            <strong>Failure Diagnostics:</strong> Failed to provide short-term volatility parameters, immediate earnings surprise delta, or intraday liquidity metrics required by execution traders.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="matrix-col matrix-col--conditioned">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 2: DCM-Conditioned (Trading Mandate)</span>
+                        <span class="status-pill status-pill--finding">MANDATE-ALIGNED</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Prioritized Metric:</strong> QoQ NIM compression (Flat at 3.46% vs market expectation of +5 bps) and CASA ratio outflow (-190 bps YoY).
+                        </p>
+                        <p>
+                            <strong>Trading Verdict:</strong> Flat NIM guidance indicates limited near-term multiple expansion catalyst; short-term price action likely range-bound between ₹1,620 and ₹1,740.
+                        </p>
+
+                        <div class="unknowns-callout">
+                            <div class="unknowns-callout__title">
+                                <span>[DECISION-BLOCKING UNKNOWNS]</span>
+                            </div>
+                            <ul class="unknowns-callout__list">
+                                <li>RBI Open Market Operations (OMO) liquidity stance for upcoming settlement week.</li>
+                                <li>FII block sale order overhang volume in post-earnings auction window.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==============================================================
+           PANEL C — RISK MANAGEMENT & STRESS-TESTING
+           ============================================================== -->
+        <div id="panel-risk" class="mandate-panel" role="tabpanel">
+            <div class="matrix-container">
+                <div class="matrix-col matrix-col--baseline">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 1: Baseline LLM (Unconditioned)</span>
+                        <span class="status-pill status-pill--problem">SILENT ASSUMPTIONS</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Generic Summary:</strong> "Capital adequacy is healthy at 19.8%, indicating sufficient resilience for ongoing banking operations."
+                        </p>
+                        <p>
+                            <strong>Failure Diagnostics:</strong> Failed to model tail-risk sensitivity or test CASA erosion against high-yield term deposit competition during rate pause cycles.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="matrix-col matrix-col--conditioned">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 2: DCM-Conditioned (Risk Mandate)</span>
+                        <span class="status-pill status-pill--finding">MANDATE-ALIGNED</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Prioritized Metric:</strong> CASA ratio contraction (35.8% from 37.7%) combined with PCR decline (69.9%).
+                        </p>
+                        <p>
+                            <strong>Risk Verdict:</strong> Ongoing CASA depletion increases reliance on higher-cost wholesale certificates of deposit, raising liquidity coverage ratio (LCR) sensitivity under adverse macro tail shocks.
+                        </p>
+
+                        <div class="unknowns-callout">
+                            <div class="unknowns-callout__title">
+                                <span>[DECISION-BLOCKING UNKNOWNS]</span>
+                            </div>
+                            <ul class="unknowns-callout__list">
+                                <li>Granular breakdown of top-20 depositor concentration percentage.</li>
+                                <li>Duration mismatch profile on fixed-rate retail housing loan portfolio.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==============================================================
+           PANEL D — VALUE INVESTMENT COMMITTEE
+           ============================================================== -->
+        <div id="panel-investment" class="mandate-panel" role="tabpanel">
+            <div class="matrix-container">
+                <div class="matrix-col matrix-col--baseline">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 1: Baseline LLM (Unconditioned)</span>
+                        <span class="status-pill status-pill--problem">SILENT ASSUMPTIONS</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Generic Summary:</strong> "Quarterly NII reached ₹30,114 Cr. Valuation appears reasonable compared to historical averages."
+                        </p>
+                        <p>
+                            <strong>Failure Diagnostics:</strong> Relied on backward-looking multiples without assessing structural return on equity (ROE) headwinds post-HDFC merger integration.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="matrix-col matrix-col--conditioned">
+                    <div class="matrix-col__header">
+                        <span class="matrix-col__title">Condition 2: DCM-Conditioned (Investment Mandate)</span>
+                        <span class="status-pill status-pill--finding">MANDATE-ALIGNED</span>
+                    </div>
+                    <div class="matrix-col__body">
+                        <p>
+                            <strong>Prioritized Metric:</strong> Long-term deposit compounding power and branch network operating leverage across a 5-year cycle.
+                        </p>
+                        <p>
+                            <strong>Investment Verdict:</strong> Despite short-term NIM digestion, franchise moat remains intact with industry-leading capital buffer (19.8% CRAR) enabling market share gains as smaller lenders face deposit constraints.
+                        </p>
+
+                        <div class="unknowns-callout">
+                            <div class="unknowns-callout__title">
+                                <span>[DECISION-BLOCKING UNKNOWNS]</span>
+                            </div>
+                            <ul class="unknowns-callout__list">
+                                <li>Cross-sell conversion velocity of HDFC Ltd mortgage customers into banking CASA accounts.</li>
+                                <li>Long-term branch unit economics in semi-urban expansion zones.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================================================================
+   SECTION 04 — SCIENTIFIC INTERPRETATION & EPISTEMIC LIMITS
+   ========================================================================== -->
+<section id="unknowns" class="section section-alt">
+    <div class="container">
+        <div class="dual-column-grid" style="align-items: start;">
+            <div>
+                <span class="section-eyebrow">03 // EMPIRICAL INTERPRETATION</span>
+                <h2 class="section-title">The Six Dimensions of Transformation</h2>
+                <p class="section-subtitle">
+                    Summary of observable transformations when applying DCM governance without altering underlying data:
+                </p>
+
+                <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.875rem; color: var(--text-secondary); margin-top: var(--space-4);">
+                    <div><strong>1. Metric Prioritization:</strong> Mandate-relevant metrics are promoted to executive prominence.</div>
+                    <div><strong>2. Metric Demotion:</strong> Irrelevant metrics are relegated to footnotes.</div>
+                    <div><strong>3. Invalidation Gates:</strong> Premature conclusions are blocked when hurdles fail.</div>
+                    <div><strong>4. Decision-Blocking Unknowns:</strong> Crucial missing parameters are explicitly declared in crimson.</div>
+                    <div><strong>5. Output Structuring:</strong> Format complies with human cognitive load limits ($4 \pm 1$).</div>
+                    <div><strong>6. Epistemic Boundary Enforcement:</strong> Speculative conjecture is replaced with verified data boundaries.</div>
+                </div>
+            </div>
+
+            <div>
+                <span class="section-eyebrow">04 // SCIENTIFIC BOUNDARIES</span>
+                <h2 class="section-title">Experimental Scope &amp; Limitations</h2>
+
+                <div class="callout callout-limitation" style="margin-top: var(--space-4);">
+                    <div class="callout-title">[METHODOLOGICAL LIMITATION &amp; NON-CLAIMS]</div>
+                    <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5; margin-bottom: 0.5rem;">
+                        <strong>Single-Institution Empirical Scope:</strong> This controlled demonstration utilizes an $N=1$ dataset (HDFC Bank Limited). While findings illustrate generalizable contextual AI failure modes, empirical results may vary across other sectors.
+                    </p>
+                    <p style="font-size: 0.875rem; line-height: 1.6; color: #fca5a5; margin-bottom: 0;">
+                        <strong>Non-Advisory Scope:</strong> Analysis presented in this experiment is conducted strictly for cognitive and model governance research. It does not constitute investment advice, equity research recommendations, or credit ratings.
+                    </p>
+                </div>
+
+                <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: var(--space-4);">
+                    Principal Researcher: <strong>Suraj Rohit Haldankar</strong> · ORCID: <a href="https://orcid.org/0009-0000-9372-059X" target="_blank" rel="noopener noreferrer">0009-0000-9372-059X ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

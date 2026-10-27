@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="100%" height="100%" role="img" aria-labelledby="d2-title d2-desc">
+    <title id="d2-title">The Data Pipeline &amp; Cognitive Loss (C_loss) Formulation</title>
+    <desc id="d2-desc">Diagram showing the four-stage data pipeline from raw market data to information architecture, the final human or machine interpreter, and the resulting 0.1% decision integrity loss.</desc>
+    
+    <defs>
+        <style>
+            .box { fill: #09090b; stroke: #27272a; stroke-width: 1; }
+            .box-critical { fill: #1c1917; stroke: #c6a227; stroke-width: 1.5; }
+            .box-loss { fill: #180808; stroke: #991b1b; stroke-width: 1.5; }
+            .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; fill: #a1a1aa; }
+            .tag-gold { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; fill: #c6a227; }
+            .tag-crimson { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; fill: #f87171; }
+            .h { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; fill: #f4f4f5; }
+            .body { font-family: 'Inter', sans-serif; font-size: 11px; fill: #d4d4d8; }
+            .line { stroke: #27272a; stroke-width: 1.5; fill: none; }
+            .leak-line { stroke: #991b1b; stroke-dasharray: 4,4; stroke-width: 1.5; fill: none; }
+        </style>
+    </defs>
+
+    <!-- Stage 01: Raw Market Data -->
+    <g transform="translate(20, 30)">
+        <rect class="box" width="160" height="150" rx="2"/>
+        <text x="12" y="24" class="tag">STAGE 01</text>
+        <text x="12" y="48" class="h">Market Data</text>
+        <text x="12" y="75" class="body">• SEC / NSE Disclosures</text>
+        <text x="12" y="95" class="body">• Microstructure Feeds</text>
+        <text x="12" y="115" class="body">• Order Flow Depth</text>
+    </g>
+
+    <path d="M 185 105 L 215 105" class="line"/>
+    <polygon points="215,102 220,105 215,108" fill="#c6a227"/>
+
+    <!-- Stage 02: Information Architecture -->
+    <g transform="translate(220, 30)">
+        <rect class="box" width="160" height="150" rx="2"/>
+        <text x="12" y="24" class="tag">STAGE 02</text>
+        <text x="12" y="48" class="h">Information Structuring</text>
+        <text x="12" y="75" class="body">• Algorithmic Indicators</text>
+        <text x="12" y="95" class="body">• Charting Geometry</text>
+        <text x="12" y="115" class="body">• Layout Density</text>
+    </g>
+
+    <path d="M 385 105 L 415 105" class="line"/>
+    <polygon points="415,102 420,105 415,108" fill="#c6a227"/>
+
+    <!-- Stage 03: The Critical Interpreter (Human / AI) -->
+    <g transform="translate(420, 30)">
+        <rect class="box-critical" width="170" height="150" rx="2"/>
+        <text x="12" y="24" class="tag-gold">STAGE 03 · BOTTLENECK</text>
+        <text x="12" y="48" class="h">Final Interpreter</text>
+        <text x="12" y="75" class="body">• 4-Chunk Memory Saturation</text>
+        <text x="12" y="95" class="body">• Silent Assumption Trap</text>
+        <text x="12" y="115" class="body">• Perceptual Slope Bias</text>
+    </g>
+
+    <!-- Downward Leakage to C_loss -->
+    <path d="M 505 180 L 505 205 L 610 205 L 610 130 L 620 130" class="leak-line"/>
+
+    <!-- Stage 04: Realized Capital Execution Outcome -->
+    <g transform="translate(620, 30)">
+        <rect class="box-loss" width="160" height="150" rx="2"/>
+        <text x="12" y="24" class="tag-crimson">STAGE 04 · IMPACT</text>
+        <text x="12" y="48" class="h" style="fill: #f87171;">The 0.1% Loss</text>
+        <text x="12" y="75" class="body" style="fill: #fca5a5;">• Cumulative Slippage</text>
+        <text x="12" y="95" class="body" style="fill: #fca5a5;">• C_loss Degradation</text>
+        <text x="12" y="115" class="body" style="fill: #fca5a5;">• Margin Leakage</text>
+    </g>
+</svg>

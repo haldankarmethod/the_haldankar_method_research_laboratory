@@ -24,6 +24,9 @@ media/
 .env
 .env.*
 *.local
+*token*
+*Token*
+haldankar_document/
 
 # OS generated & temporary files
 Thumbs.db
